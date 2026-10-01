@@ -328,7 +328,6 @@
     "successApply": "Başvurun alındı. Sana e-posta ile dönüş yapacağız.",
     "successPartner": "İletişime geçtiğin için teşekkürler. Ekibimiz yakında sana ulaşacak.",
     "error": "Bir şeyler ters gitti. Lütfen tekrar dene veya {email} adresine yaz.",
-    "rateLimit": "Çok fazla gönderim yapıldı. Lütfen daha sonra tekrar dene.",
     "another": "Yeni gönderim",
     "fields": {
       "full_name": "Ad soyad",

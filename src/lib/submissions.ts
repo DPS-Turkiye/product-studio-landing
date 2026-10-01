@@ -1,4 +1,5 @@
-const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+import { z } from "zod";
+
 const URLISH = /^(https?:\/\/)?[\w.-]+\.[a-z]{2,}(\/\S*)?$/i;
 
 export const ROLES = [
@@ -17,101 +18,138 @@ export const STATUSES = [
 
 export const INTERESTS = ["challenge", "sponsor", "mentor", "other"] as const;
 
-export type FieldError = { field: string; code: string };
-
-type Body = Record<string, unknown>;
-
-function str(value: unknown, max: number) {
-  if (value == null) return "";
-  return String(value).trim().slice(0, max);
+function requiredText(max: number, min = 1) {
+  const schema = z
+    .string({ error: "required" })
+    .trim()
+    .max(max, "invalid")
+    .min(1, "required");
+  return min > 1 ? schema.min(min, "too_short") : schema;
 }
 
-function makeChecker(body: Body) {
-  const errors: FieldError[] = [];
-  const data: Record<string, string | boolean | null> = {};
-  return {
-    errors,
-    data,
-    text(key: string, { required = false, max = 200, min = 0 } = {}) {
-      const value = str(body[key], max);
-      if (required && !value) errors.push({ field: key, code: "required" });
-      else if (value && value.length < min) {
-        errors.push({ field: key, code: "too_short" });
-      }
-      data[key] = value || null;
-    },
-    email(key: string) {
-      const value = str(body[key], 200).toLowerCase();
-      if (!value) errors.push({ field: key, code: "required" });
-      else if (!EMAIL.test(value)) errors.push({ field: key, code: "invalid" });
-      data[key] = value;
-    },
-    url(key: string, { required = false } = {}) {
-      const value = str(body[key], 300);
-      if (required && !value) errors.push({ field: key, code: "required" });
-      else if (value && !URLISH.test(value)) {
-        errors.push({ field: key, code: "invalid" });
-      }
-      data[key] = value || null;
-    },
-    oneOf(key: string, list: readonly string[], { required = true } = {}) {
-      const value = str(body[key], 50);
-      if (required && !value) errors.push({ field: key, code: "required" });
-      else if (value && !list.includes(value)) {
-        errors.push({ field: key, code: "invalid" });
-      }
-      data[key] = value || null;
-    },
-    mustBeTrue(key: string) {
-      if (body[key] !== true) errors.push({ field: key, code: "required" });
-    },
-  };
+function optionalText(max: number) {
+  return z
+    .string({ error: "invalid" })
+    .trim()
+    .max(max, "invalid")
+    .optional()
+    .default("");
 }
 
-export function validateApplication(body: Body) {
-  const checker = makeChecker(body);
-  checker.text("full_name", { required: true, max: 120, min: 3 });
-  checker.email("email");
-  checker.text("phone", { max: 40 });
-  checker.text("city", { max: 80 });
-  checker.oneOf("status", STATUSES);
-  checker.text("institution", { max: 160 });
-  checker.text("field", { max: 160 });
-  checker.oneOf("role", ROLES);
-  checker.url("linkedin");
-  checker.url("portfolio");
-  checker.text("motivation", { required: true, max: 3000, min: 50 });
-  checker.text("experience", { max: 3000 });
-  checker.text("heard_from", { max: 120 });
-  checker.data.available = body.available === true;
-  checker.mustBeTrue("available");
-  checker.mustBeTrue("consent");
-  checker.data.lang = body.lang === "tr" ? "tr" : "en";
-  return { errors: checker.errors, data: checker.data };
+function optionalUrl() {
+  return z
+    .string({ error: "invalid" })
+    .trim()
+    .max(300, "invalid")
+    .refine((value) => !value || URLISH.test(value), "invalid")
+    .optional()
+    .default("");
 }
 
-export function validatePartner(body: Body) {
-  const checker = makeChecker(body);
-  checker.text("company", { required: true, max: 160, min: 2 });
-  checker.url("website");
-  checker.text("contact_name", { required: true, max: 120, min: 3 });
-  checker.text("contact_role", { max: 120 });
-  checker.email("email");
-  checker.text("phone", { max: 40 });
-  checker.oneOf("interest", INTERESTS);
-  checker.text("challenge", { max: 4000 });
-  checker.text("heard_from", { max: 120 });
-  checker.mustBeTrue("consent");
-  checker.data.lang = body.lang === "tr" ? "tr" : "en";
-  return { errors: checker.errors, data: checker.data };
+function oneOf<const T extends readonly [string, ...string[]]>(values: T) {
+  return z
+    .string({ error: "required" })
+    .min(1, "required")
+    .pipe(z.enum(values, { error: "invalid" }));
 }
 
-const hits = new Map<string, number[]>();
+const must = z
+  .boolean({ error: "required" })
+  .refine((value) => value === true, "required");
 
-export function rateLimited(ip: string, max = 5, windowMs = 10 * 60 * 1000) {
-  const now = Date.now();
-  const recent = (hits.get(ip) ?? []).filter((time) => now - time < windowMs);
-  recent.push(now);
-  hits.set(ip, recent);
-  return recent.length > max;
+const email = z
+  .string({ error: "required" })
+  .trim()
+  .toLowerCase()
+  .max(200, "invalid")
+  .min(1, "required")
+  .pipe(z.email("invalid_email"));
+
+const locale = z
+  .enum(["en", "tr"], { error: "invalid" })
+  .optional()
+  .default("en");
+
+export const applicationSchema = z.object({
+  full_name: requiredText(120, 3),
+  email,
+  phone: optionalText(40),
+  city: optionalText(80),
+  status: oneOf(STATUSES),
+  institution: optionalText(160),
+  field: optionalText(160),
+  role: oneOf(ROLES),
+  linkedin: optionalUrl(),
+  portfolio: optionalUrl(),
+  motivation: requiredText(3000, 50),
+  experience: optionalText(3000),
+  heard_from: optionalText(120),
+  available: must,
+  consent: must,
+  website_url: optionalText(300),
+  lang: locale,
+});
+
+export const partnerSchema = z.object({
+  company: requiredText(160, 2),
+  website: optionalUrl(),
+  contact_name: requiredText(120, 3),
+  contact_role: optionalText(120),
+  email,
+  phone: optionalText(40),
+  interest: oneOf(INTERESTS),
+  challenge: optionalText(4000),
+  heard_from: optionalText(120),
+  consent: must,
+  website_url: optionalText(300),
+  lang: locale,
+});
+
+export type ApplicationInput = z.input<typeof applicationSchema>;
+export type Application = z.output<typeof applicationSchema>;
+export type PartnerInput = z.input<typeof partnerSchema>;
+export type Partner = z.output<typeof partnerSchema>;
+
+export function fieldErrors(error: z.ZodError) {
+  const fields: { field: string; code: string }[] = [];
+  for (const issue of error.issues) {
+    const field = String(issue.path[0] ?? "");
+    if (!field || fields.some((item) => item.field === field)) continue;
+    fields.push({ field, code: issue.message });
+  }
+  return fields;
+}
+
+export async function acceptSubmission<T>(
+  request: Request,
+  schema: z.ZodType<T>,
+  send: (data: T) => Promise<void>,
+) {
+  const body = (await request.json().catch(() => null)) as unknown;
+  if (!body || typeof body !== "object") {
+    return Response.json({ error: "invalid" }, { status: 400 });
+  }
+
+  const honeypot =
+    "website_url" in body
+      ? String((body as { website_url?: unknown }).website_url ?? "").trim()
+      : "";
+  if (honeypot) return Response.json({ ok: true }, { status: 201 });
+
+  const parsed = schema.safeParse(body);
+  if (!parsed.success) {
+    return Response.json(
+      { fields: fieldErrors(parsed.error) },
+      { status: 422 },
+    );
+  }
+
+  try {
+    await send(parsed.data);
+  } catch (error) {
+    console.error(error);
+    return Response.json({ error: "send_failed" }, { status: 500 });
+  }
+
+  return Response.json({ ok: true }, { status: 201 });
 }

@@ -1,3 +1,4 @@
+import { QueryProvider } from "@/components/query-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { routing } from "@/i18n/routing";
@@ -50,16 +51,18 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider>
-          <a className="skip-link" href="#main">
-            {t("skip")}
-          </a>
-          <SiteHeader />
-          <main id="main" className="flex-1">
-            {children}
-          </main>
-          <SiteFooter />
-          <Analytics />
-          <SpeedInsights />
+          <QueryProvider>
+            <a className="skip-link" href="#main">
+              {t("skip")}
+            </a>
+            <SiteHeader />
+            <main id="main" className="flex-1">
+              {children}
+            </main>
+            <SiteFooter />
+            <Analytics />
+            <SpeedInsights />
+          </QueryProvider>
         </NextIntlClientProvider>
       </body>
     </html>

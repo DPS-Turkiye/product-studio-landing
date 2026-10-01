@@ -328,7 +328,6 @@
     "successApply": "Your application has been received. We will get back to you by email.",
     "successPartner": "Thanks for reaching out. Our team will contact you soon.",
     "error": "Something went wrong. Please try again or email us at {email}.",
-    "rateLimit": "Too many submissions. Please try again later.",
     "another": "Send another",
     "fields": {
       "full_name": "Full name",
