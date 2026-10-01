@@ -1,0 +1,297 @@
+{
+  "_note": "SAMPLE DATA - replace with your real batches. Newest batch first. role must be one of: product-manager, interaction-designer, software-engineer, ai-engineer. Images go in content/images/ (e.g. 'partners/logo.svg', 'members/name.jpg', 'batches/batch-2.jpg').",
+  "batches": [
+    {
+      "id": "batch-2",
+      "name": "Batch #2",
+      "season": { "en": "Autumn 2026", "tr": "Güz 2026" },
+      "start": "2026-09-07",
+      "end": "2026-11-27",
+      "status": "ongoing",
+      "summary": {
+        "en": "Four teams working on mobility, finance, health and public-sector challenges.",
+        "tr": "Mobilite, finans, sağlık ve kamu alanlarında dört ekip."
+      },
+      "photo": "",
+      "teams": [
+        {
+          "id": "northwind",
+          "name": "Team Northwind",
+          "partner": {
+            "name": "Northwind Mobility",
+            "logo": "",
+            "website": ""
+          },
+          "challenge": {
+            "en": "How might we help daily commuters plan multi-modal trips with confidence?",
+            "tr": "Günlük yolcuların farklı ulaşım türlerini birleştiren yolculukları güvenle planlamasına nasıl yardımcı olabiliriz?"
+          },
+          "tags": ["Mobility", "Mobile app"],
+          "members": [
+            {
+              "name": "Ayşe Yılmaz",
+              "role": "product-manager",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Emre Koç",
+              "role": "interaction-designer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Mert Çelik",
+              "role": "software-engineer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "İrem Aksoy",
+              "role": "software-engineer",
+              "linkedin": "",
+              "photo": ""
+            },
+            {
+              "name": "Kerem Polat",
+              "role": "ai-engineer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            }
+          ]
+        },
+        {
+          "id": "kestrel",
+          "name": "Team Kestrel",
+          "partner": { "name": "Kestrel Bank", "logo": "", "website": "" },
+          "challenge": {
+            "en": "How might we make saving a habit for first-time earners?",
+            "tr": "İlk kez gelir elde eden gençler için birikim yapmayı nasıl alışkanlığa dönüştürebiliriz?"
+          },
+          "tags": ["FinTech", "Behaviour change"],
+          "members": [
+            {
+              "name": "Ece Güneş",
+              "role": "product-manager",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Onur Kılıç",
+              "role": "interaction-designer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Berk Aslan",
+              "role": "software-engineer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Duygu Kara",
+              "role": "software-engineer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            }
+          ]
+        },
+        {
+          "id": "helix",
+          "name": "Team Helix",
+          "partner": { "name": "Helix Health", "logo": "", "website": "" },
+          "challenge": {
+            "en": "How might we reduce no-shows for outpatient appointments?",
+            "tr": "Poliklinik randevularına gelmeme oranını nasıl azaltabiliriz?"
+          },
+          "tags": ["HealthTech", "AI"],
+          "members": [
+            {
+              "name": "Gizem Tunç",
+              "role": "product-manager",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Arda Erdem",
+              "role": "interaction-designer",
+              "linkedin": "",
+              "photo": ""
+            },
+            {
+              "name": "Yusuf Kurt",
+              "role": "software-engineer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Nazlı Özer",
+              "role": "ai-engineer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            }
+          ]
+        },
+        {
+          "id": "civic",
+          "name": "Team Civic",
+          "partner": { "name": "Civic Lab", "logo": "", "website": "" },
+          "challenge": {
+            "en": "How might we make municipal services easier to find for new residents?",
+            "tr": "Şehre yeni taşınanların belediye hizmetlerine ulaşmasını nasıl kolaylaştırabiliriz?"
+          },
+          "tags": ["GovTech", "Web"],
+          "members": [
+            {
+              "name": "Sena Yavuz",
+              "role": "product-manager",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Tolga Bulut",
+              "role": "interaction-designer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Cem Acar",
+              "role": "software-engineer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Melis Doğan",
+              "role": "software-engineer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "batch-1",
+      "name": "Batch #1",
+      "season": { "en": "Spring 2026", "tr": "Bahar 2026" },
+      "start": "2026-02-23",
+      "end": "2026-05-15",
+      "status": "completed",
+      "summary": {
+        "en": "Our first batch: three teams, three partners, three tested prototypes on Demo Day.",
+        "tr": "İlk dönemimiz: üç ekip, üç partner ve Demo Day'de test edilmiş üç prototip."
+      },
+      "photo": "",
+      "teams": [
+        {
+          "id": "orbit",
+          "name": "Team Orbit",
+          "partner": { "name": "Orbit Logistics", "logo": "", "website": "" },
+          "challenge": {
+            "en": "How might we give warehouse staff real-time visibility of incoming shipments?",
+            "tr": "Depo çalışanlarına gelen sevkiyatları gerçek zamanlı nasıl gösterebiliriz?"
+          },
+          "tags": ["Logistics", "Dashboard"],
+          "members": [
+            {
+              "name": "Ahmet Uçar",
+              "role": "product-manager",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Buse Kaplan",
+              "role": "interaction-designer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Oğuz Er",
+              "role": "software-engineer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Pelin Sarı",
+              "role": "software-engineer",
+              "linkedin": "",
+              "photo": ""
+            }
+          ]
+        },
+        {
+          "id": "terra",
+          "name": "Team Terra",
+          "partner": { "name": "Terra Energy", "logo": "", "website": "" },
+          "challenge": {
+            "en": "How might we help households understand and cut their energy use?",
+            "tr": "Hanelerin enerji tüketimlerini anlamasına ve azaltmasına nasıl yardımcı olabiliriz?"
+          },
+          "tags": ["Energy", "Sustainability"],
+          "members": [
+            {
+              "name": "Hande Ateş",
+              "role": "product-manager",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Kaan Yurt",
+              "role": "interaction-designer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Ozan Tekin",
+              "role": "software-engineer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Ceren Işık",
+              "role": "ai-engineer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            }
+          ]
+        },
+        {
+          "id": "pixel",
+          "name": "Team Pixel",
+          "partner": { "name": "Pixel Retail", "logo": "", "website": "" },
+          "challenge": {
+            "en": "How might we bring the in-store advice experience to online shoppers?",
+            "tr": "Mağazadaki danışmanlık deneyimini online alışverişe nasıl taşıyabiliriz?"
+          },
+          "tags": ["Retail", "Conversational AI"],
+          "members": [
+            {
+              "name": "Yağmur Bal",
+              "role": "product-manager",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Efe Karaca",
+              "role": "interaction-designer",
+              "linkedin": "",
+              "photo": ""
+            },
+            {
+              "name": "Batuhan Gül",
+              "role": "software-engineer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            },
+            {
+              "name": "Derya Oral",
+              "role": "ai-engineer",
+              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "photo": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

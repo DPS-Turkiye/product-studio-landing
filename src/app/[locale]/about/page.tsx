@@ -1,0 +1,95 @@
+import { ApplyCta } from "@/components/apply-cta";
+import { DotGrid, Star } from "@/components/icons";
+import { MentorBrowser } from "@/components/mentor-browser";
+import { PageHero, SectionLabel } from "@/components/ui";
+import { tracks } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata() {
+  const t = await getTranslations();
+  return pageMetadata(
+    "/about",
+    `${t("nav.about")} — Product Studio`,
+    t("about.intro"),
+  );
+}
+
+export default async function AboutPage() {
+  const t = await getTranslations();
+  const story = t.raw("about.story.body") as string[];
+  const values = t.raw("about.values.items") as {
+    title: string;
+    text: string;
+  }[];
+
+  return (
+    <>
+      <PageHero
+        label={t("about.label")}
+        title={t("about.title")}
+        intro={t("about.intro")}
+      />
+
+      <section className="section section-tight">
+        <div className="container grid-12">
+          <div className="col-5">
+            <SectionLabel index="01">{t("about.story.title")}</SectionLabel>
+            <div className="about-photo">
+              <img
+                src="/images/team-table.jpg"
+                alt=""
+                className="project-image"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div className="col-6 col-start-7 about-story">
+            {story.map((paragraph) => (
+              <p key={paragraph} className="body-lg">
+                {paragraph}
+              </p>
+            ))}
+            <a
+              className="dps-badge"
+              href="https://www.digitalproductschool.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="label">{t("common.supportedBy")}</span>
+              <img src="/images/dps-logo.svg" alt="Digital Product School" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-dark">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <SectionLabel index="02" light>
+                {t("about.values.title")}
+              </SectionLabel>
+            </div>
+            <DotGrid cols={5} rows={3} color="var(--lime)" />
+          </div>
+          <div className="values">
+            {values.map((value, index) => (
+              <div className="value" key={value.title}>
+                <Star
+                  size={28}
+                  color={index % 2 ? "var(--purple)" : "var(--lime)"}
+                />
+                <h3 className="h3">{value.title}</h3>
+                <p>{value.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <MentorBrowser tracks={tracks} />
+      <ApplyCta />
+    </>
+  );
+}

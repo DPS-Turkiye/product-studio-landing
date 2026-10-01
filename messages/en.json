@@ -1,6 +1,388 @@
 {
+  "nav": {
+    "home": "Home",
+    "cases": "Cases",
+    "about": "About us",
+    "partner": "Become a partner",
+    "apply": "Apply now",
+    "menu": "Menu",
+    "close": "Close",
+    "lang": "Language"
+  },
+  "roles": {
+    "product-manager": "Product Manager",
+    "interaction-designer": "Interaction Designer",
+    "software-engineer": "Software Engineer",
+    "ai-engineer": "AI Engineer"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "loading": "Loading…",
+    "loadError": "Content could not be loaded. Please refresh the page.",
+    "linkedin": "LinkedIn profile of {name}",
+    "weeks": "weeks",
+    "deadline": "Application deadline",
+    "programDates": "Program dates",
+    "format": "Format",
+    "supportedBy": "Supported by",
+    "skip": "Skip to content"
+  },
+  "home": {
+    "hero": {
+      "lines": ["Real challenges.", "Real teams.", "Real products."],
+      "intro": "A hands-on program where interdisciplinary teams of product managers, designers, software and AI engineers turn real company challenges into tested digital products.",
+      "apply": "Apply now",
+      "partner": "Become a partner"
+    },
+    "marquee": ["Team up", "Learn", "Build", "Test", "Ship"],
+    "what": {
+      "label": "What is Product Studio?",
+      "title": "A hands-on product development experience.",
+      "body": [
+        "Product Studio brings together interdisciplinary teams from product management, software engineering, AI engineering, interaction design and other roles.",
+        "Together, they work on concrete digital challenges from companies — from problem definition through user research and prototyping to tested digital products."
+      ],
+      "spinoff": "Product Studio is a spin-off of Digital Product School, one of Europe’s best-known training programs for cross-functional product teams."
+    },
+    "journey": {
+      "label": "Journey",
+      "title": "From problem to product in 12 weeks.",
+      "steps": [
+        {
+          "title": "Team up",
+          "text": "Join a cross-functional team and meet your partner’s challenge."
+        },
+        {
+          "title": "Learn",
+          "text": "Workshops and mentoring on product, design, engineering and AI."
+        },
+        {
+          "title": "Build",
+          "text": "Define the problem, research users, prototype and iterate fast."
+        },
+        {
+          "title": "Test",
+          "text": "Validate every idea with real users, not assumptions."
+        },
+        {
+          "title": "Ship",
+          "text": "Present a tested digital product to partners on Demo Day."
+        }
+      ]
+    },
+    "roles": {
+      "label": "Roles",
+      "title": "Every team is cross-functional.",
+      "items": {
+        "product-manager": "Frames the problem, aligns stakeholders and keeps the team focused on value.",
+        "interaction-designer": "Talks to users, shapes the experience and turns insights into prototypes.",
+        "software-engineer": "Builds working software from day one and makes the product real.",
+        "ai-engineer": "Explores data and brings AI capabilities into the product responsibly."
+      }
+    },
+    "equation": {
+      "words": ["Ideas", "People", "Technology"],
+      "result": "Impact"
+    },
+    "projects": {
+      "label": "Real projects",
+      "title": "Challenges from real companies.",
+      "cta": "See all cases"
+    },
+    "get": {
+      "label": "What you get",
+      "title": "More than a course.",
+      "items": [
+        {
+          "title": "Workshops",
+          "text": "Practical sessions on product discovery, design, engineering and AI."
+        },
+        {
+          "title": "Mentorship",
+          "text": "Weekly guidance from experienced practitioners in every track."
+        },
+        {
+          "title": "Team experience",
+          "text": "Work like a real product team with clear roles and rituals."
+        },
+        {
+          "title": "Product development",
+          "text": "Take an idea from problem definition to a tested product."
+        },
+        {
+          "title": "Demo Day",
+          "text": "Pitch your product to partners, mentors and the community."
+        }
+      ]
+    },
+    "cta": {
+      "lines": ["Your team.", "Your product.", "Your challenge."],
+      "text": "Applications for {batch} are open until {deadline}.",
+      "closed": "Applications for the next batch will open soon. Leave your details and we will let you know.",
+      "button": "Apply now"
+    }
+  },
+  "cases": {
+    "label": "Cases",
+    "title": "Batches, teams & partners.",
+    "intro": "Each batch brings together several cross-functional teams, each working on a challenge from a partner company. Browse the batches to see who built what.",
+    "selectBatch": "Select a batch",
+    "teams": "Teams",
+    "participants": "Participants",
+    "partners": "Partners",
+    "status": {
+      "ongoing": "Ongoing",
+      "completed": "Completed",
+      "upcoming": "Upcoming"
+    },
+    "challenge": "Challenge",
+    "partner": "Partner",
+    "members": "Team members",
+    "filterRole": "Filter by role",
+    "allRoles": "All roles",
+    "empty": "No teams have been announced for this batch yet."
+  },
+  "about": {
+    "label": "About us",
+    "title": "Learning by building.",
+    "intro": "We believe the best way to learn product development is to do it: with a real problem, a real team and real users. Product Studio creates that environment.",
+    "story": {
+      "title": "Our story",
+      "body": [
+        "Product Studio started as a spin-off of Digital Product School (DPS), the Munich-based program that has trained cross-functional product teams for years.",
+        "We bring the DPS way of working — interdisciplinary teams, real challenges, user-centred methods and modern technology — to Türkiye, and adapt it to our local ecosystem of students, professionals and companies."
+      ]
+    },
+    "values": {
+      "title": "What we stand for",
+      "items": [
+        {
+          "title": "Real over theoretical",
+          "text": "Every team works on a real challenge from a real company."
+        },
+        {
+          "title": "Users first",
+          "text": "We test ideas with people, not with opinions."
+        },
+        {
+          "title": "Together",
+          "text": "Great products need product, design, engineering and AI in one team."
+        },
+        {
+          "title": "Ship it",
+          "text": "We value working, tested products over perfect slides."
+        }
+      ]
+    },
+    "mentors": {
+      "label": "Mentors",
+      "title": "Guided by practitioners.",
+      "intro": "Our mentors work in the industry every day. Each track is supported by experienced people who coach the teams throughout the batch.",
+      "all": "All tracks"
+    }
+  },
+  "partner": {
+    "label": "Become a partner",
+    "title": "Bring us your challenge.",
+    "intro": "Give a real digital challenge to a motivated, interdisciplinary team. In 12 weeks they go from problem definition to a tested prototype — and you meet the talent behind it.",
+    "cta": "Start the conversation",
+    "benefits": {
+      "title": "Why partner with us?",
+      "items": [
+        {
+          "title": "Fresh perspective",
+          "text": "A cross-functional team looks at your problem without internal constraints."
+        },
+        {
+          "title": "Tested prototype",
+          "text": "Get user-validated insights and a working prototype, not just a report."
+        },
+        {
+          "title": "Talent access",
+          "text": "Work closely with promising product managers, designers and engineers."
+        },
+        {
+          "title": "Methods you keep",
+          "text": "Your team experiences modern product discovery and agile delivery first-hand."
+        }
+      ]
+    },
+    "how": {
+      "title": "How it works",
+      "steps": [
+        {
+          "title": "Share a challenge",
+          "text": "Tell us about a digital problem that matters to your business."
+        },
+        {
+          "title": "Scope together",
+          "text": "We shape it into a clear, open challenge that fits a 12-week batch."
+        },
+        {
+          "title": "Work with the team",
+          "text": "A challenge owner from your side meets the team regularly for feedback."
+        },
+        {
+          "title": "Demo Day",
+          "text": "The team presents a tested product and hands over what they built."
+        }
+      ]
+    },
+    "ways": {
+      "title": "Ways to support",
+      "items": [
+        {
+          "title": "Challenge partner",
+          "text": "Provide a real challenge and a challenge owner for one batch."
+        },
+        {
+          "title": "Sponsor",
+          "text": "Help us run the program, offer workshops, venues or resources."
+        },
+        {
+          "title": "Mentor",
+          "text": "Share your expertise with the teams in one of our tracks."
+        }
+      ]
+    },
+    "form": {
+      "title": "Get in touch",
+      "intro": "Fill in the form and our team will contact you within a few working days."
+    }
+  },
+  "apply": {
+    "label": "Apply now",
+    "title": "Build real products with a real team.",
+    "intro": "Join Product Studio as a product manager, interaction designer, software engineer or AI engineer. Work full-time in a cross-functional team on a real challenge from a partner company.",
+    "closedTitle": "Applications are currently closed.",
+    "closedText": "You can still send your details. We will contact you when the next batch opens.",
+    "rolesTitle": "Choose your role",
+    "who": {
+      "title": "Who can apply?",
+      "items": [
+        "University students (preferably in their final years), recent graduates and early-career professionals.",
+        "You can commit full-time for the whole batch.",
+        "You enjoy working in a team with people from other disciplines.",
+        "You are comfortable working in English and Turkish."
+      ]
+    },
+    "process": {
+      "title": "Selection process",
+      "steps": [
+        {
+          "title": "Apply online",
+          "text": "Fill in the form below. It takes about 10 minutes."
+        },
+        {
+          "title": "Review",
+          "text": "We review every application carefully."
+        },
+        {
+          "title": "Interview",
+          "text": "Shortlisted candidates are invited to an interview or case task."
+        },
+        {
+          "title": "Welcome",
+          "text": "Successful candidates are matched into teams before kick-off."
+        }
+      ]
+    },
+    "faq": {
+      "title": "FAQ",
+      "items": [
+        {
+          "q": "Is the program free for participants?",
+          "a": "Yes. Participation in Product Studio is free of charge."
+        },
+        {
+          "q": "Do I need prior experience?",
+          "a": "You need solid basics in your role. We care more about motivation, curiosity and teamwork than years of experience."
+        },
+        {
+          "q": "Can I participate while studying or working?",
+          "a": "The program is full-time and intensive. Please make sure you can dedicate your time for the whole batch."
+        },
+        {
+          "q": "Which language is used?",
+          "a": "Teams work in Turkish and English. Workshops and materials may be in English."
+        },
+        {
+          "q": "Can I apply for more than one role?",
+          "a": "Please choose the one role that fits you best. You can mention other skills in your application."
+        }
+      ]
+    },
+    "form": {
+      "title": "Application form",
+      "intro": "All fields marked with * are required."
+    }
+  },
+  "form": {
+    "required": "This field is required.",
+    "invalidEmail": "Please enter a valid email address.",
+    "invalidUrl": "Please enter a valid URL.",
+    "tooShort": "Please write a bit more.",
+    "submit": "Submit",
+    "submitting": "Sending…",
+    "successTitle": "Thank you!",
+    "successApply": "Your application has been received. We will get back to you by email.",
+    "successPartner": "Thanks for reaching out. Our team will contact you soon.",
+    "error": "Something went wrong. Please try again or email us at {email}.",
+    "rateLimit": "Too many submissions. Please try again later.",
+    "another": "Send another",
+    "fields": {
+      "full_name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "city": "City",
+      "status": "Current status",
+      "institution": "University / company",
+      "field": "Department / field of study",
+      "role": "Role you are applying for",
+      "linkedin": "LinkedIn profile",
+      "portfolio": "Portfolio / GitHub / website",
+      "motivation": "Why do you want to join Product Studio?",
+      "motivationHint": "At least 50 characters.",
+      "experience": "Relevant projects or experience",
+      "heard_from": "How did you hear about us?",
+      "available": "I can commit full-time for the whole program period.",
+      "consent": "I consent to the processing of my personal data for this application (KVKK).",
+      "company": "Company",
+      "website": "Company website",
+      "contact_name": "Your name",
+      "contact_role": "Your position",
+      "interest": "I am interested in",
+      "challenge": "Tell us about your challenge or idea",
+      "consentPartner": "I consent to Product Studio storing my details to contact me (KVKK)."
+    },
+    "statuses": {
+      "student": "Student",
+      "graduate": "Recent graduate",
+      "professional": "Professional",
+      "other": "Other"
+    },
+    "interests": {
+      "challenge": "Challenge partner",
+      "sponsor": "Sponsor",
+      "mentor": "Mentor",
+      "other": "Something else"
+    },
+    "select": "Select…"
+  },
+  "footer": {
+    "tagline": "Real challenges. Real teams. Real products.",
+    "pages": "Pages",
+    "contact": "Contact",
+    "follow": "Follow",
+    "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page not found.",
+    "text": "The page you are looking for does not exist or has moved.",
+    "back": "Back to home"
+  },
   "Metadata": {
-    "title": "Create Next App",
-    "description": "Generated by create next app"
+    "title": "Product Studio — Real challenges. Real teams. Real products.",
+    "description": "Product Studio brings together interdisciplinary teams of product managers, designers, software and AI engineers to build tested digital products for real company challenges."
   }
 }

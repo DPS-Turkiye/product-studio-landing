@@ -1,6 +1,388 @@
 {
+  "nav": {
+    "home": "Ana sayfa",
+    "cases": "Projeler",
+    "about": "Hakkımızda",
+    "partner": "Partner ol",
+    "apply": "Başvur",
+    "menu": "Menü",
+    "close": "Kapat",
+    "lang": "Dil"
+  },
+  "roles": {
+    "product-manager": "Ürün Yöneticisi",
+    "interaction-designer": "Etkileşim Tasarımcısı",
+    "software-engineer": "Yazılım Mühendisi",
+    "ai-engineer": "Yapay Zekâ Mühendisi"
+  },
+  "common": {
+    "learnMore": "Daha fazla",
+    "loading": "Yükleniyor…",
+    "loadError": "İçerik yüklenemedi. Lütfen sayfayı yenileyin.",
+    "linkedin": "{name} LinkedIn profili",
+    "weeks": "hafta",
+    "deadline": "Son başvuru tarihi",
+    "programDates": "Program tarihleri",
+    "format": "Format",
+    "supportedBy": "Destekleyen",
+    "skip": "İçeriğe geç"
+  },
+  "home": {
+    "hero": {
+      "lines": ["Gerçek problemler.", "Gerçek ekipler.", "Gerçek ürünler."],
+      "intro": "Ürün yöneticileri, tasarımcılar, yazılım ve yapay zekâ mühendislerinden oluşan disiplinlerarası ekiplerin, şirketlerin gerçek problemlerini test edilmiş dijital ürünlere dönüştürdüğü uygulamalı bir program.",
+      "apply": "Hemen başvur",
+      "partner": "Partner ol"
+    },
+    "marquee": ["Takım kur", "Öğren", "Geliştir", "Test et", "Yayınla"],
+    "what": {
+      "label": "Product Studio nedir?",
+      "title": "Uygulamalı bir ürün geliştirme deneyimi.",
+      "body": [
+        "Product Studio; ürün yönetimi, yazılım mühendisliği, yapay zekâ mühendisliği, etkileşim tasarımı ve diğer rollerden gelen disiplinlerarası ekipleri bir araya getirir.",
+        "Ekipler, şirketlerden gelen somut dijital problemler üzerinde birlikte çalışır — problem tanımından kullanıcı araştırmasına, prototiplemeden test edilmiş dijital ürünlere kadar."
+      ],
+      "spinoff": "Product Studio, çapraz fonksiyonlu ürün ekipleri için Avrupa’nın en bilinen eğitim programlarından biri olan Digital Product School’un bir spin-off’udur."
+    },
+    "journey": {
+      "label": "Yolculuk",
+      "title": "12 haftada problemden ürüne.",
+      "steps": [
+        {
+          "title": "Takım kur",
+          "text": "Çapraz fonksiyonlu bir ekibe katıl ve partnerinin problemiyle tanış."
+        },
+        {
+          "title": "Öğren",
+          "text": "Ürün, tasarım, mühendislik ve yapay zekâ üzerine atölyeler ve mentorluk."
+        },
+        {
+          "title": "Geliştir",
+          "text": "Problemi tanımla, kullanıcıları araştır, hızla prototiple ve yinele."
+        },
+        {
+          "title": "Test et",
+          "text": "Her fikri varsayımlarla değil, gerçek kullanıcılarla doğrula."
+        },
+        {
+          "title": "Yayınla",
+          "text": "Demo Day’de test edilmiş dijital ürününü partnerlere sun."
+        }
+      ]
+    },
+    "roles": {
+      "label": "Roller",
+      "title": "Her ekip çapraz fonksiyonlu.",
+      "items": {
+        "product-manager": "Problemi çerçeveler, paydaşları hizalar ve ekibi değere odaklı tutar.",
+        "interaction-designer": "Kullanıcılarla konuşur, deneyimi şekillendirir ve içgörüleri prototiplere dönüştürür.",
+        "software-engineer": "İlk günden çalışan yazılım geliştirir ve ürünü gerçeğe dönüştürür.",
+        "ai-engineer": "Veriyi keşfeder ve yapay zekâ yeteneklerini ürüne sorumlu şekilde taşır."
+      }
+    },
+    "equation": {
+      "words": ["Fikirler", "İnsanlar", "Teknoloji"],
+      "result": "Etki"
+    },
+    "projects": {
+      "label": "Gerçek projeler",
+      "title": "Gerçek şirketlerden gerçek problemler.",
+      "cta": "Tüm projeleri gör"
+    },
+    "get": {
+      "label": "Neler kazanırsın",
+      "title": "Bir kurstan çok daha fazlası.",
+      "items": [
+        {
+          "title": "Atölyeler",
+          "text": "Ürün keşfi, tasarım, mühendislik ve yapay zekâ üzerine uygulamalı oturumlar."
+        },
+        {
+          "title": "Mentorluk",
+          "text": "Her alanda deneyimli uygulayıcılardan haftalık yönlendirme."
+        },
+        {
+          "title": "Ekip deneyimi",
+          "text": "Net roller ve ritüellerle gerçek bir ürün ekibi gibi çalış."
+        },
+        {
+          "title": "Ürün geliştirme",
+          "text": "Bir fikri problem tanımından test edilmiş bir ürüne taşı."
+        },
+        {
+          "title": "Demo Day",
+          "text": "Ürününü partnerlere, mentorlara ve topluluğa sun."
+        }
+      ]
+    },
+    "cta": {
+      "lines": ["Senin ekibin.", "Senin ürünün.", "Senin problemin."],
+      "text": "{batch} başvuruları {deadline} tarihine kadar açık.",
+      "closed": "Bir sonraki dönemin başvuruları yakında açılacak. Bilgilerini bırak, sana haber verelim.",
+      "button": "Hemen başvur"
+    }
+  },
+  "cases": {
+    "label": "Projeler",
+    "title": "Dönemler, ekipler ve partnerler.",
+    "intro": "Her dönemde, her biri bir partner şirketin problemi üzerinde çalışan birkaç çapraz fonksiyonlu ekip yer alır. Kimin neyi geliştirdiğini görmek için dönemlere göz at.",
+    "selectBatch": "Dönem seç",
+    "teams": "Ekip",
+    "participants": "Katılımcı",
+    "partners": "Partner",
+    "status": {
+      "ongoing": "Devam ediyor",
+      "completed": "Tamamlandı",
+      "upcoming": "Yakında"
+    },
+    "challenge": "Problem",
+    "partner": "Partner",
+    "members": "Ekip üyeleri",
+    "filterRole": "Role göre filtrele",
+    "allRoles": "Tüm roller",
+    "empty": "Bu dönem için henüz ekip duyurulmadı."
+  },
+  "about": {
+    "label": "Hakkımızda",
+    "title": "Yaparak öğrenmek.",
+    "intro": "Ürün geliştirmeyi öğrenmenin en iyi yolunun onu yapmak olduğuna inanıyoruz: gerçek bir problemle, gerçek bir ekiple ve gerçek kullanıcılarla. Product Studio bu ortamı yaratır.",
+    "story": {
+      "title": "Hikâyemiz",
+      "body": [
+        "Product Studio, yıllardır çapraz fonksiyonlu ürün ekipleri yetiştiren Münih merkezli Digital Product School’un (DPS) bir spin-off’u olarak doğdu.",
+        "DPS’nin çalışma biçimini — disiplinlerarası ekipler, gerçek problemler, kullanıcı odaklı yöntemler ve modern teknoloji — Türkiye’ye getiriyor ve öğrenciler, profesyoneller ve şirketlerden oluşan yerel ekosistemimize uyarlıyoruz."
+      ]
+    },
+    "values": {
+      "title": "Neyi savunuyoruz",
+      "items": [
+        {
+          "title": "Teoriden çok gerçek",
+          "text": "Her ekip gerçek bir şirketin gerçek bir problemi üzerinde çalışır."
+        },
+        {
+          "title": "Önce kullanıcı",
+          "text": "Fikirleri görüşlerle değil, insanlarla test ederiz."
+        },
+        {
+          "title": "Birlikte",
+          "text": "İyi ürünler; ürün, tasarım, mühendislik ve yapay zekânın aynı ekipte olmasını gerektirir."
+        },
+        {
+          "title": "Yayınla",
+          "text": "Mükemmel sunumlardan çok çalışan, test edilmiş ürünlere değer veririz."
+        }
+      ]
+    },
+    "mentors": {
+      "label": "Mentorlar",
+      "title": "Uygulayıcıların rehberliğinde.",
+      "intro": "Mentorlarımız her gün sektörün içinde çalışıyor. Her alan, dönem boyunca ekiplere koçluk yapan deneyimli kişiler tarafından desteklenir.",
+      "all": "Tüm alanlar"
+    }
+  },
+  "partner": {
+    "label": "Partner ol",
+    "title": "Problemini bize getir.",
+    "intro": "Gerçek bir dijital problemi motivasyonu yüksek, disiplinlerarası bir ekibe ver. 12 haftada problem tanımından test edilmiş bir prototipe ulaşsınlar — sen de arkasındaki yeteneklerle tanış.",
+    "cta": "Görüşmeyi başlat",
+    "benefits": {
+      "title": "Neden partner olmalısın?",
+      "items": [
+        {
+          "title": "Taze bakış açısı",
+          "text": "Çapraz fonksiyonlu bir ekip, problemine kurum içi kısıtlar olmadan bakar."
+        },
+        {
+          "title": "Test edilmiş prototip",
+          "text": "Yalnızca bir rapor değil, kullanıcıyla doğrulanmış içgörüler ve çalışan bir prototip."
+        },
+        {
+          "title": "Yeteneğe erişim",
+          "text": "Gelecek vadeden ürün yöneticileri, tasarımcılar ve mühendislerle yakından çalış."
+        },
+        {
+          "title": "Kalıcı yöntemler",
+          "text": "Ekibin modern ürün keşfi ve çevik teslimatı birinci elden deneyimler."
+        }
+      ]
+    },
+    "how": {
+      "title": "Nasıl işliyor?",
+      "steps": [
+        {
+          "title": "Problemini paylaş",
+          "text": "İşin için önemli olan dijital bir problemi bize anlat."
+        },
+        {
+          "title": "Birlikte kapsamlayalım",
+          "text": "12 haftalık bir döneme uyan, net ve açık uçlu bir probleme dönüştürelim."
+        },
+        {
+          "title": "Ekiple çalış",
+          "text": "Senin tarafından bir problem sahibi, geri bildirim için ekiple düzenli buluşur."
+        },
+        {
+          "title": "Demo Day",
+          "text": "Ekip test edilmiş ürünü sunar ve geliştirdiklerini teslim eder."
+        }
+      ]
+    },
+    "ways": {
+      "title": "Destek olmanın yolları",
+      "items": [
+        {
+          "title": "Problem partneri",
+          "text": "Bir dönem için gerçek bir problem ve bir problem sahibi sağla."
+        },
+        {
+          "title": "Sponsor",
+          "text": "Programın yürütülmesine destek ol; atölye, mekân veya kaynak sağla."
+        },
+        {
+          "title": "Mentor",
+          "text": "Uzmanlığını alanlarımızdan birinde ekiplerle paylaş."
+        }
+      ]
+    },
+    "form": {
+      "title": "İletişime geç",
+      "intro": "Formu doldur, ekibimiz birkaç iş günü içinde seninle iletişime geçsin."
+    }
+  },
+  "apply": {
+    "label": "Başvur",
+    "title": "Gerçek bir ekiple gerçek ürünler geliştir.",
+    "intro": "Product Studio’ya ürün yöneticisi, etkileşim tasarımcısı, yazılım mühendisi veya yapay zekâ mühendisi olarak katıl. Bir partner şirketin gerçek problemi üzerinde çapraz fonksiyonlu bir ekipte tam zamanlı çalış.",
+    "closedTitle": "Başvurular şu anda kapalı.",
+    "closedText": "Yine de bilgilerini gönderebilirsin. Bir sonraki dönem açıldığında seninle iletişime geçeceğiz.",
+    "rolesTitle": "Rolünü seç",
+    "who": {
+      "title": "Kimler başvurabilir?",
+      "items": [
+        "Üniversite öğrencileri (tercihen son sınıflar), yeni mezunlar ve kariyerinin başındaki profesyoneller.",
+        "Dönem boyunca tam zamanlı katılım sağlayabilecek olanlar.",
+        "Farklı disiplinlerden insanlarla ekip olarak çalışmayı sevenler.",
+        "Türkçe ve İngilizce çalışabilenler."
+      ]
+    },
+    "process": {
+      "title": "Seçim süreci",
+      "steps": [
+        {
+          "title": "Online başvur",
+          "text": "Aşağıdaki formu doldur. Yaklaşık 10 dakika sürer."
+        },
+        {
+          "title": "Değerlendirme",
+          "text": "Her başvuruyu dikkatle inceliyoruz."
+        },
+        {
+          "title": "Mülakat",
+          "text": "Ön elemeyi geçen adaylar mülakata veya vaka çalışmasına davet edilir."
+        },
+        {
+          "title": "Hoş geldin",
+          "text": "Kabul edilen adaylar başlangıçtan önce ekiplere yerleştirilir."
+        }
+      ]
+    },
+    "faq": {
+      "title": "SSS",
+      "items": [
+        {
+          "q": "Program katılımcılar için ücretsiz mi?",
+          "a": "Evet. Product Studio’ya katılım ücretsizdir."
+        },
+        {
+          "q": "Önceden deneyim gerekli mi?",
+          "a": "Rolünde sağlam bir temel bekliyoruz. Deneyim yılından çok motivasyon, merak ve ekip çalışmasını önemsiyoruz."
+        },
+        {
+          "q": "Okurken veya çalışırken katılabilir miyim?",
+          "a": "Program tam zamanlı ve yoğundur. Lütfen dönem boyunca zaman ayırabileceğinden emin ol."
+        },
+        {
+          "q": "Hangi dil kullanılıyor?",
+          "a": "Ekipler Türkçe ve İngilizce çalışır. Atölyeler ve materyaller İngilizce olabilir."
+        },
+        {
+          "q": "Birden fazla role başvurabilir miyim?",
+          "a": "Lütfen sana en uygun tek rolü seç. Diğer becerilerini başvurunda belirtebilirsin."
+        }
+      ]
+    },
+    "form": {
+      "title": "Başvuru formu",
+      "intro": "* ile işaretli alanlar zorunludur."
+    }
+  },
+  "form": {
+    "required": "Bu alan zorunludur.",
+    "invalidEmail": "Lütfen geçerli bir e-posta adresi gir.",
+    "invalidUrl": "Lütfen geçerli bir bağlantı gir.",
+    "tooShort": "Lütfen biraz daha detay yaz.",
+    "submit": "Gönder",
+    "submitting": "Gönderiliyor…",
+    "successTitle": "Teşekkürler!",
+    "successApply": "Başvurun alındı. Sana e-posta ile dönüş yapacağız.",
+    "successPartner": "İletişime geçtiğin için teşekkürler. Ekibimiz yakında sana ulaşacak.",
+    "error": "Bir şeyler ters gitti. Lütfen tekrar dene veya {email} adresine yaz.",
+    "rateLimit": "Çok fazla gönderim yapıldı. Lütfen daha sonra tekrar dene.",
+    "another": "Yeni gönderim",
+    "fields": {
+      "full_name": "Ad soyad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "city": "Şehir",
+      "status": "Mevcut durum",
+      "institution": "Üniversite / şirket",
+      "field": "Bölüm / alan",
+      "role": "Başvurduğun rol",
+      "linkedin": "LinkedIn profili",
+      "portfolio": "Portfolyo / GitHub / web sitesi",
+      "motivation": "Neden Product Studio’ya katılmak istiyorsun?",
+      "motivationHint": "En az 50 karakter.",
+      "experience": "İlgili projeler veya deneyim",
+      "heard_from": "Bizi nereden duydun?",
+      "available": "Program süresince tam zamanlı katılım sağlayabilirim.",
+      "consent": "Bu başvuru kapsamında kişisel verilerimin işlenmesine onay veriyorum (KVKK).",
+      "company": "Şirket",
+      "website": "Şirket web sitesi",
+      "contact_name": "Adın",
+      "contact_role": "Pozisyonun",
+      "interest": "İlgilendiğim konu",
+      "challenge": "Problemini veya fikrini anlat",
+      "consentPartner": "Benimle iletişime geçilmesi için bilgilerimin saklanmasına onay veriyorum (KVKK)."
+    },
+    "statuses": {
+      "student": "Öğrenci",
+      "graduate": "Yeni mezun",
+      "professional": "Profesyonel",
+      "other": "Diğer"
+    },
+    "interests": {
+      "challenge": "Problem partneri",
+      "sponsor": "Sponsor",
+      "mentor": "Mentor",
+      "other": "Başka bir konu"
+    },
+    "select": "Seç…"
+  },
+  "footer": {
+    "tagline": "Gerçek problemler. Gerçek ekipler. Gerçek ürünler.",
+    "pages": "Sayfalar",
+    "contact": "İletişim",
+    "follow": "Takip et",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "notFound": {
+    "title": "Sayfa bulunamadı.",
+    "text": "Aradığın sayfa mevcut değil veya taşınmış.",
+    "back": "Ana sayfaya dön"
+  },
   "Metadata": {
-    "title": "Create Next App",
-    "description": "create next app ile oluşturuldu"
+    "title": "Product Studio — Gerçek problemler. Gerçek ekipler. Gerçek ürünler.",
+    "description": "Ürün yöneticileri, tasarımcılar, yazılım ve yapay zekâ mühendislerinden oluşan disiplinlerarası ekiplerin, şirketlerin gerçek problemlerini test edilmiş dijital ürünlere dönüştürdüğü uygulamalı bir program."
   }
 }

@@ -50,6 +50,7 @@ const eslintConfig = defineConfig([
     rules: {
       "import/first": "error",
       "studio/no-comments": "error",
+      "@next/next/no-img-element": "off",
       "@typescript-eslint/consistent-type-imports": [
         "error",
         {
