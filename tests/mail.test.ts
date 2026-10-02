@@ -88,6 +88,7 @@ describe("mail", () => {
       to: RESEND_TO,
       replyTo: "ada@example.com",
       subject: "New application: Ada Lovelace",
+      html: expect.any(String),
       text: [
         "Name: Ada Lovelace",
         "Email: ada@example.com",
@@ -102,8 +103,8 @@ describe("mail", () => {
         "Motivation: " + motivation,
         "Experience: Shipped a payments prototype.",
         "Heard from: A mentor",
-        "Available full-time: yes",
-        "Language: en",
+        "Available full-time: Yes",
+        "Language: English",
       ].join("\n"),
     });
   });
@@ -184,7 +185,9 @@ describe("mail", () => {
     expect(send.mock.lastCall?.[0].text).toContain(
       "Interest: Challenge partner",
     );
-    expect(send.mock.lastCall?.[0].text).toContain("Language: tr");
+    expect(send.mock.lastCall?.[0].text).toContain("Language: Turkish");
+    expect(send.mock.lastCall?.[0].html).toContain("Northwind");
+    expect(send.mock.lastCall?.[0].html).toContain("/images/logo-email.png");
   });
 
   it("raises the provider error", async () => {
