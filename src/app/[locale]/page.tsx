@@ -10,6 +10,7 @@ import { Button, SectionLabel, Tag } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
 import { batches, loc, site } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
+import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 
 const ROLE_KEYS = [
@@ -86,9 +87,13 @@ export default async function HomePage() {
             </div>
           </div>
           <div className="hero__visual">
-            <img
+            <Image
               src="/images/hero.jpg"
               alt="Product Studio participants working together"
+              width={882}
+              height={941}
+              priority
+              sizes="(max-width: 1000px) 100vw, 50vw"
               className="hero__photo"
             />
           </div>
@@ -248,10 +253,13 @@ export default async function HomePage() {
             </div>
             <div className="project-grid">
               <div className="project-feature">
-                <img
+                <Image
                   src="/images/team-table.jpg"
                   alt=""
+                  fill
+                  sizes="(max-width: 900px) 100vw, 42vw"
                   className="project-image"
+                  style={{ objectFit: "cover" }}
                 />
                 <div className="project-feature__caption">
                   <Tag variant="lime">{batch.name}</Tag>

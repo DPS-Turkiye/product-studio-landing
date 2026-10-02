@@ -1,5 +1,6 @@
 import { Link } from "@/i18n/navigation";
 import { img, initials } from "@/lib/content";
+import Image from "next/image";
 import { Arrow, Star } from "./icons";
 import type { ReactNode } from "react";
 
@@ -84,11 +85,14 @@ export function PageHero({
         {intro && <p className="body-lg page-hero__intro">{intro}</p>}
         {children}
       </div>
-      <img
+      <Image
         className="page-hero__brush"
         src="/images/brush-purple.png"
         alt=""
-        aria-hidden="true"
+        width={592}
+        height={400}
+        loading="eager"
+        aria-hidden
       />
     </section>
   );
@@ -104,10 +108,19 @@ export function Avatar({
   size?: string;
 }) {
   const src = img(photo);
+  const sizes = size === "sm" ? "40px" : size === "xl" ? "320px" : "56px";
   return (
     <div className={`avatar avatar-${size}`}>
-      {src ? (
-        <img src={src} alt="" loading="lazy" />
+      {src?.endsWith(".svg") ? (
+        <img src={src} alt="" />
+      ) : src ? (
+        <Image
+          src={src}
+          alt=""
+          fill
+          sizes={sizes}
+          style={{ objectFit: "cover" }}
+        />
       ) : (
         <span aria-hidden="true">{initials(name)}</span>
       )}

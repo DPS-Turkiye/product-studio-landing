@@ -4,6 +4,7 @@ import { MentorBrowser } from "@/components/mentor-browser";
 import { PageHero, SectionLabel } from "@/components/ui";
 import { tracks } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata() {
@@ -36,11 +37,15 @@ export default async function AboutPage() {
           <div className="col-5">
             <SectionLabel index="01">{t("about.story.title")}</SectionLabel>
             <div className="about-photo">
-              <img
+              <Image
                 src="/images/team-table.jpg"
                 alt=""
+                fill
+                priority
+                loading="eager"
+                sizes="(max-width: 1000px) 100vw, 42vw"
                 className="project-image"
-                loading="lazy"
+                style={{ objectFit: "cover" }}
               />
             </div>
           </div>

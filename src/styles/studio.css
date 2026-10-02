@@ -1239,6 +1239,7 @@ a:hover .arrow {
   top: 0;
   right: 0;
   width: min(520px, 45vw);
+  height: auto;
   pointer-events: none;
   user-select: none;
 }
@@ -1382,8 +1383,10 @@ a:hover .arrow {
   letter-spacing: -0.04em;
 }
 .batch-overview__photo {
+  position: relative;
   grid-column: 1 / -1;
-  max-height: 440px;
+  height: min(440px, 62vw);
+  overflow: hidden;
 }
 @media (max-width: 800px) {
   .batch-overview {
@@ -1543,6 +1546,7 @@ a.partner-mark:hover .partner-mark__name {
 }
 
 .avatar {
+  position: relative;
   flex: none;
   display: grid;
   place-items: center;
@@ -1631,6 +1635,7 @@ a.partner-mark:hover .partner-mark__name {
    About
    ========================================================= */
 .about-photo {
+  position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border: var(--border);
@@ -1752,14 +1757,14 @@ a.partner-mark:hover .partner-mark__name {
   border-bottom: var(--border);
   background: var(--black);
 }
-.mentor-card__photo > img {
+.mentor-card__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
-.mentor-card:hover .mentor-card__photo > img {
+.mentor-card:hover .mentor-card__photo img {
   filter: grayscale(0);
 }
 .mentor-card__body {

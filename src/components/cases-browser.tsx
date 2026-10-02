@@ -2,6 +2,7 @@
 
 import { Link, useRouter } from "@/i18n/navigation";
 import { formatRange, img, loc } from "@/lib/content";
+import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
 import { Arrow, Star } from "./icons";
@@ -76,6 +77,7 @@ export function CasesBrowser({
   const router = useRouter();
   const [roleFilter, setRoleFilter] = useState("");
   const active = batches.find((batch) => batch.id === activeId) ?? batches[0];
+  const photo = img(active?.photo);
 
   useEffect(() => {
     if (!active || !window.location.hash) return;
@@ -169,14 +171,25 @@ export function CasesBrowser({
             <dd>{counts.partners}</dd>
           </div>
         </dl>
-        {active.photo && (
-          <img
-            className="batch-overview__photo project-image"
-            src={img(active.photo) ?? ""}
-            alt=""
-            loading="lazy"
-          />
-        )}
+        {photo &&
+          (photo.endsWith(".svg") ? (
+            <img
+              className="batch-overview__photo project-image"
+              src={photo}
+              alt=""
+            />
+          ) : (
+            <div className="batch-overview__photo">
+              <Image
+                className="project-image"
+                src={photo}
+                alt=""
+                fill
+                sizes="(max-width: 800px) 100vw, 1120px"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          ))}
       </div>
 
       <div
