@@ -13,6 +13,7 @@ import {
   Section,
   Text,
 } from "@react-email/components";
+import { englishUpper } from "./rows";
 import type { EmailRow } from "./rows";
 
 const black = "#0b0d14";
@@ -84,10 +85,9 @@ export function SubmissionEmail({
                 fontSize: "12px",
                 fontWeight: 700,
                 letterSpacing: "0.14em",
-                textTransform: "uppercase",
               }}
             >
-              {eyebrow}
+              {englishUpper(eyebrow)}
             </Text>
             <Heading
               as="h1"
@@ -127,7 +127,7 @@ export function SubmissionEmail({
                 borderRadius: 0,
               }}
             >
-              {replyLabel.toUpperCase()}
+              {englishUpper(replyLabel)}
             </Button>
           </Section>
           <Section style={{ padding: "8px 32px 28px" }}>
@@ -175,7 +175,7 @@ function Field({ row }: { row: EmailRow }) {
           borderLeft: `4px solid ${purple}`,
         }}
       >
-        <Text style={labelStyle}>{row.label}</Text>
+        <Text style={labelStyle}>{englishUpper(row.label)}</Text>
         <Text
           style={{
             margin: "6px 0 0",
@@ -195,7 +195,7 @@ function Field({ row }: { row: EmailRow }) {
     <Section
       style={{ borderBottom: `1px solid ${line}`, padding: "12px 0 10px" }}
     >
-      <Text style={labelStyle}>{row.label}</Text>
+      <Text style={labelStyle}>{englishUpper(row.label)}</Text>
       {row.href ? (
         <Link
           href={row.href}
@@ -230,5 +230,4 @@ const labelStyle = {
   fontSize: "11px",
   fontWeight: 700,
   letterSpacing: "0.08em",
-  textTransform: "uppercase" as const,
 };

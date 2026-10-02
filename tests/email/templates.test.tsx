@@ -3,6 +3,7 @@ import { PartnerEmail } from "@/lib/email/partner-email";
 import {
   applicationLede,
   applicationRows,
+  englishUpper,
   externalHref,
   partnerLede,
   partnerRows,
@@ -50,6 +51,13 @@ function partnerHtml(data: Partner) {
 }
 
 describe("email rows", () => {
+  it("uppercases english labels with a dotless i", () => {
+    expect(englishUpper("New application")).toBe("NEW APPLICATION");
+    expect(englishUpper("Available full-time")).toBe("AVAILABLE FULL-TIME");
+    expect(englishUpper("New application")).not.toContain("İ");
+    expect(englishUpper("Available full-time")).not.toContain("İ");
+  });
+
   it("keeps absolute urls and prefixes the rest", () => {
     expect(externalHref("https://ada.example/work")).toBe(
       "https://ada.example/work",
@@ -249,7 +257,9 @@ describe("email html", () => {
     expect(html).toContain("#0b0d14");
     expect(html).toContain("#5832ff");
     expect(html).toContain("#a6ff00");
+    expect(html).toContain("NEW APPLICATION");
     expect(html).toContain("New application from Ada Lovelace");
+    expect(html).not.toContain("İ");
     expect(html).toContain("Software Engineer · Professional · Ankara");
     expect(html).toContain('href="mailto:ada@example.com"');
     expect(html).toContain('href="https://www.linkedin.com/in/ada"');
@@ -260,7 +270,7 @@ describe("email html", () => {
     expect(html).toContain(motivation);
     expect(html).toContain("Shipped a payments prototype.");
     expect(html).toContain("A mentor");
-    expect(html).toContain("Available full-time");
+    expect(html).toContain("AVAILABLE FULL-TIME");
     expect(html).toContain("English");
     expect(html).toContain("REPLY");
   });

@@ -33,6 +33,10 @@ const LANGUAGE_LABELS = {
   tr: "Turkish",
 } as const;
 
+export function englishUpper(value: string) {
+  return value.toLocaleUpperCase("en-US");
+}
+
 export function externalHref(value: string) {
   if (/^https?:\/\//i.test(value)) return value;
   return `https://${value}`;
