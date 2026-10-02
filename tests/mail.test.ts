@@ -1,5 +1,9 @@
-import { site } from "@/lib/content";
-import { sendApplication, sendPartner } from "@/lib/mail";
+import {
+  RESEND_FROM,
+  RESEND_TO,
+  sendApplication,
+  sendPartner,
+} from "@/lib/mail";
 import { applicationSchema, partnerSchema } from "@/lib/submissions";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -50,8 +54,6 @@ describe("mail", () => {
     ctor.mockReset();
     send.mockResolvedValue({ data: { id: "email-1" }, error: null });
     vi.stubEnv("RESEND_API_KEY", "re_test");
-    vi.stubEnv("RESEND_FROM", "");
-    vi.stubEnv("RESEND_TO", "");
   });
 
   afterEach(() => {
@@ -66,7 +68,7 @@ describe("mail", () => {
     expect(send).not.toHaveBeenCalled();
   });
 
-  it("sends an application from the sandbox address to the studio inbox", async () => {
+  it("sends an application to the studio inboxes", async () => {
     await sendApplication(
       application({
         phone: "+90 555",
@@ -82,8 +84,8 @@ describe("mail", () => {
 
     expect(ctor).toHaveBeenCalledWith("re_test");
     expect(send).toHaveBeenCalledWith({
-      from: "Product Studio <onboarding@resend.dev>",
-      to: [site.contactEmail],
+      from: RESEND_FROM,
+      to: RESEND_TO,
       replyTo: "ada@example.com",
       subject: "New application: Ada Lovelace",
       text: [
@@ -155,10 +157,7 @@ describe("mail", () => {
     expect(message.text).not.toContain("Experience:");
   });
 
-  it("sends a partner message and honors from and inbox overrides", async () => {
-    vi.stubEnv("RESEND_FROM", "Studio <studio@example.com>");
-    vi.stubEnv("RESEND_TO", "owner@example.com");
-
+  it("sends a partner message to the same inboxes", async () => {
     await sendPartner(
       partner({
         website: "https://northwind.example",
@@ -172,8 +171,8 @@ describe("mail", () => {
 
     expect(send).toHaveBeenCalledWith(
       expect.objectContaining({
-        from: "Studio <studio@example.com>",
-        to: ["owner@example.com"],
+        from: RESEND_FROM,
+        to: RESEND_TO,
         replyTo: "ada@northwind.example",
         subject: "New partner: Northwind",
       }),

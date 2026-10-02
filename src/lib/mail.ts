@@ -23,15 +23,13 @@ const INTEREST_LABELS: Record<Partner["interest"], string> = {
   other: "Something else",
 };
 
-const DEFAULT_FROM = "Product Studio <onboarding@resend.dev>";
+export const RESEND_FROM = `Product Studio <${site.contactEmail}>`;
+export const RESEND_TO = ["egeayann2001@gmail.com", "egeayan2478@gmail.com"];
 
 function client() {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) throw new Error("Resend is not configured");
-  return {
-    resend: new Resend(apiKey),
-    from: process.env.RESEND_FROM || DEFAULT_FROM,
-  };
+  return new Resend(apiKey);
 }
 
 function oneLine(value: string) {
@@ -45,20 +43,14 @@ function body(rows: Array<[string, string | boolean]>) {
     .join("\n");
 }
 
-function inbox(address: string) {
-  return process.env.RESEND_TO || address;
-}
-
 async function deliver(message: {
-  to: string;
   replyTo: string;
   subject: string;
   text: string;
 }) {
-  const { resend, from } = client();
-  const { error } = await resend.emails.send({
-    from,
-    to: [inbox(message.to)],
+  const { error } = await client().emails.send({
+    from: RESEND_FROM,
+    to: RESEND_TO,
     replyTo: message.replyTo,
     subject: message.subject,
     text: message.text,
@@ -68,7 +60,6 @@ async function deliver(message: {
 
 export async function sendApplication(data: Application) {
   await deliver({
-    to: site.contactEmail,
     replyTo: data.email,
     subject: `New application: ${oneLine(data.full_name)}`,
     text: body([
@@ -93,7 +84,6 @@ export async function sendApplication(data: Application) {
 
 export async function sendPartner(data: Partner) {
   await deliver({
-    to: site.partnerEmail,
     replyTo: data.email,
     subject: `New partner: ${oneLine(data.company)}`,
     text: body([
