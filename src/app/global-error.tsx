@@ -5,10 +5,6 @@ import { Arrow, Star } from "@/components/icons";
 import { useEffect } from "react";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin", "latin-ext"],
-});
-
 export default function GlobalError({
   error,
   retry,

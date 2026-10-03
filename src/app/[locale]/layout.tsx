@@ -11,11 +11,6 @@ import { getLocale, getTranslations } from "next-intl/server";
 import type { Metadata, Viewport } from "next";
 import "../globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin", "latin-ext"],
-  display: "optional",
-});
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
