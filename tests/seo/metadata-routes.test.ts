@@ -24,14 +24,35 @@ describe("metadata routes", () => {
         },
       },
     });
+    const about = entries.find(
+      (entry) => entry.url === "https://example.com/about-us",
+    );
+    const aboutTr = entries.find(
+      (entry) => entry.url === "https://example.com/tr/hakkimizda",
+    );
+
+    expect(about?.alternates).toEqual({
+      languages: {
+        en: "https://example.com/about-us",
+        tr: "https://example.com/tr/hakkimizda",
+        "x-default": "https://example.com/about-us",
+      },
+    });
+    expect(aboutTr?.alternates).toEqual(about?.alternates);
     expect(entries.map((entry) => entry.url)).toEqual(
       expect.arrayContaining([
         "https://example.com/",
+        "https://example.com/tr",
         "https://example.com/cases",
-        "https://example.com/about",
-        "https://example.com/partner",
-        "https://example.com/apply",
+        "https://example.com/tr/projeler",
+        "https://example.com/about-us",
+        "https://example.com/tr/hakkimizda",
+        "https://example.com/become-a-partner",
+        "https://example.com/tr/partner-ol",
+        "https://example.com/apply-now",
+        "https://example.com/tr/basvur",
         "https://example.com/cases/batch-2",
+        "https://example.com/tr/projeler/batch-2",
       ]),
     );
   });

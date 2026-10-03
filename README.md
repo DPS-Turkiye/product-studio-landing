@@ -4,7 +4,6 @@
 
 <p align="center">
   <strong>Real challenges. Real teams. Real products.</strong><br>
-  Gerçek problemler. Gerçek ekipler. Gerçek ürünler.
 </p>
 
 <p align="center">
@@ -74,17 +73,16 @@ The dev server starts at [http://localhost:3000](http://localhost:3000).
 
 ## Routes
 
-| Path             | Page                               |
-| ---------------- | ---------------------------------- |
-| `/`              | Home                               |
-| `/cases`         | Batches                            |
-| `/cases/[batch]` | One batch and its teams            |
-| `/about`         | Story, values, mentors             |
-| `/apply`         | Participant application            |
-| `/partner`       | Partner enquiry                    |
-| `/tr/...`        | Turkish versions of the same pages |
+| English             | Turkish                | Page                    |
+| ------------------- | ---------------------- | ----------------------- |
+| `/`                 | `/tr`                  | Home                    |
+| `/cases`            | `/tr/projeler`         | Batches                 |
+| `/cases/[batch]`    | `/tr/projeler/[batch]` | One batch and its teams |
+| `/about-us`         | `/tr/hakkimizda`       | Story, values, mentors  |
+| `/apply-now`        | `/tr/basvur`           | Participant application |
+| `/become-a-partner` | `/tr/partner-ol`       | Partner enquiry         |
 
-`/en` redirects to the unprefixed English URL. `/api/applications` and `/api/partners` accept `POST` JSON. `sitemap.xml` and `robots.txt` are generated.
+The slugs follow the navigation labels. English has no locale prefix. `/en/...` redirects to the unprefixed English URL. `/api/applications` and `/api/partners` accept `POST` JSON. `sitemap.xml` and `robots.txt` are generated. The sitemap is a single file: every English and Turkish URL is its own entry, and each entry repeats the full `hreflang` set, including itself and `x-default`.
 
 ## Content
 

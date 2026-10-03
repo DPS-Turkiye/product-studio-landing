@@ -25,17 +25,17 @@ describe("page metadata", () => {
         title: { absolute: "About" },
         description: "The story",
         alternates: {
-          canonical: "/about",
+          canonical: "/about-us",
           languages: {
-            en: "/about",
-            tr: "/tr/about",
-            "x-default": "/about",
+            en: "/about-us",
+            tr: "/tr/hakkimizda",
+            "x-default": "/about-us",
           },
         },
         openGraph: {
           title: "About",
           description: "The story",
-          url: "/about",
+          url: "/about-us",
           siteName: "Product Studio",
           locale: "en_US",
           type: "website",
@@ -51,15 +51,15 @@ describe("page metadata", () => {
     const metadata = await pageMetadata("/apply", "Başvur", "Form");
 
     expect(metadata.alternates).toMatchObject({
-      canonical: "/tr/apply",
+      canonical: "/tr/basvur",
       languages: {
-        en: "/apply",
-        tr: "/tr/apply",
-        "x-default": "/apply",
+        en: "/apply-now",
+        tr: "/tr/basvur",
+        "x-default": "/apply-now",
       },
     });
     expect(metadata.openGraph).toMatchObject({
-      url: "/tr/apply",
+      url: "/tr/basvur",
       locale: "tr_TR",
     });
   });

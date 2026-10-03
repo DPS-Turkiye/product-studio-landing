@@ -123,7 +123,7 @@ export function CasesBrowser({
             role="tab"
             aria-selected={batch.id === active.id}
             className={`batch-tab ${batch.id === active.id ? "is-active" : ""}`}
-            href={`/cases/${batch.id}`}
+            href={{ pathname: "/cases/[batch]", params: { batch: batch.id } }}
             scroll={false}
           >
             <span className="batch-tab__name">{batch.name}</span>
@@ -289,7 +289,12 @@ export function CasesBrowser({
                 key={batch.id}
                 type="button"
                 className="batch-pager__link"
-                onClick={() => router.push(`/cases/${batch.id}`)}
+                onClick={() =>
+                  router.push({
+                    pathname: "/cases/[batch]",
+                    params: { batch: batch.id },
+                  })
+                }
               >
                 <span className="label muted">{loc(batch.season, locale)}</span>
                 <span className="batch-pager__name">

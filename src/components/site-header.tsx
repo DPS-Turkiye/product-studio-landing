@@ -1,6 +1,7 @@
 "use client";
 
 import { Link, usePathname } from "@/i18n/navigation";
+import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { Arrow } from "./icons";
@@ -14,7 +15,15 @@ const NAV = [
 export function SiteHeader() {
   const t = useTranslations("nav");
   const pathname = usePathname();
+  const params = useParams();
   const locale = useLocale();
+  const batch = typeof params.batch === "string" ? params.batch : undefined;
+  const localeHref =
+    pathname === "/cases/[batch]"
+      ? batch
+        ? { pathname, params: { batch } }
+        : "/cases"
+      : pathname;
   const [scrolled, setScrolled] = useState(false);
   const [menuPath, setMenuPath] = useState<string | null>(null);
   const open = menuPath === pathname;
@@ -58,7 +67,7 @@ export function SiteHeader() {
             {(["en", "tr"] as const).map((code) => (
               <Link
                 key={code}
-                href={pathname}
+                href={localeHref}
                 locale={code}
                 className={locale === code ? "is-active" : ""}
                 hrefLang={code}
@@ -88,11 +97,13 @@ export function SiteHeader() {
 
       <div id="mobile-menu" className="mobile-menu" hidden={!open}>
         <nav className="container" aria-label="Mobile">
-          {[
-            { to: "/", key: "home" },
-            ...NAV,
-            { to: "/apply", key: "apply" },
-          ].map((item, index) => (
+          {(
+            [
+              { to: "/", key: "home" },
+              ...NAV,
+              { to: "/apply", key: "apply" },
+            ] as const
+          ).map((item, index) => (
             <Link
               key={item.to}
               href={item.to}

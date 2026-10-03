@@ -3,8 +3,10 @@ import { routing } from "@/i18n/routing";
 import { getLocale } from "next-intl/server";
 import type { Metadata } from "next";
 
+type Href = Parameters<typeof getPathname>[0]["href"];
+
 export async function pageMetadata(
-  href: string,
+  href: Href,
   title: string,
   description: string,
 ): Promise<Metadata> {

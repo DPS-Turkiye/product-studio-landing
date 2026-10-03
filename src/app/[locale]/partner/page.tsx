@@ -41,7 +41,9 @@ export default async function PartnerPage() {
         intro={t("partner.intro")}
       >
         <div className="page-hero__ctas">
-          <Button to="/partner#form-top">{t("partner.cta")}</Button>
+          <Button to={{ pathname: "/partner", hash: "form-top" }}>
+            {t("partner.cta")}
+          </Button>
         </div>
       </PageHero>
 

@@ -19,7 +19,7 @@ export async function generateMetadata({
   const t = await getTranslations();
   if (!batch) return {};
   return pageMetadata(
-    `/cases/${batch.id}`,
+    { pathname: "/cases/[batch]", params: { batch: batch.id } },
     `${batch.name} — Product Studio`,
     t("cases.intro"),
   );

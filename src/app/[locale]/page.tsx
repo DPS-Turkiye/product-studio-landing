@@ -6,6 +6,7 @@ import {
   OutlineIcons,
   Star,
 } from "@/components/icons";
+import { Marquee } from "@/components/marquee";
 import { Button, SectionLabel, Tag } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
 import { batches, loc, site } from "@/lib/content";
@@ -101,30 +102,7 @@ export default async function HomePage() {
         <DotGrid className="hero__dots" color="var(--grey-300)" />
       </section>
 
-      <div className="marquee" aria-label={marquee.join(", ")}>
-        <div className="marquee__track" aria-hidden="true">
-          {[0, 1, 2, 3].map((group) => (
-            <div className="marquee__group" key={group}>
-              {marquee.flatMap((word, index) => [
-                <span key={`${group}-w${index}`}>{word}</span>,
-                index % 2 === 0 ? (
-                  <Star
-                    key={`${group}-s${index}`}
-                    size={18}
-                    color="var(--lime)"
-                  />
-                ) : (
-                  <Arrow
-                    key={`${group}-a${index}`}
-                    size={18}
-                    className="lime"
-                  />
-                ),
-              ])}
-            </div>
-          ))}
-        </div>
-      </div>
+      <Marquee items={marquee} />
 
       <section className="section">
         <div className="container grid-12">
@@ -269,7 +247,11 @@ export default async function HomePage() {
               <div className="project-list">
                 {teams.map((team) => (
                   <Link
-                    href={`/cases/${batch.id}#${team.id}`}
+                    href={{
+                      pathname: "/cases/[batch]",
+                      params: { batch: batch.id },
+                      hash: team.id,
+                    }}
                     className="project-item"
                     key={team.id}
                   >

@@ -695,6 +695,7 @@ a:hover .arrow {
    Marquee
    ========================================================= */
 .marquee {
+  position: relative;
   background: var(--black);
   color: var(--white);
   padding: 18px 0;
@@ -708,18 +709,32 @@ a:hover .arrow {
 .marquee__track {
   display: flex;
   width: max-content;
-  animation: marquee 40s linear infinite;
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
 }
 .marquee__group {
   display: flex;
+  flex: none;
+}
+.marquee__sequence {
+  display: flex;
+  flex: none;
   align-items: center;
   gap: 28px;
   padding-right: 28px;
+}
+.marquee__measure {
+  position: absolute;
+  width: max-content;
+  visibility: hidden;
+  pointer-events: none;
 }
 .marquee .lime {
   color: var(--lime);
 }
 @keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
   to {
     transform: translateX(-50%);
   }

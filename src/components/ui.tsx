@@ -2,7 +2,9 @@ import { Link } from "@/i18n/navigation";
 import { img, initials } from "@/lib/content";
 import Image from "next/image";
 import { Arrow, Star } from "./icons";
-import type { ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
+
+type LinkHref = ComponentProps<typeof Link>["href"];
 
 export function Button({
   to,
@@ -11,7 +13,7 @@ export function Button({
   arrow = true,
   className = "",
 }: {
-  to?: string;
+  to?: LinkHref;
   variant?: string;
   children: ReactNode;
   arrow?: boolean;
