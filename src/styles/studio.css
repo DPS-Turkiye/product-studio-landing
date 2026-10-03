@@ -411,11 +411,17 @@ a:hover .arrow {
   top: 0;
   z-index: 50;
   height: var(--nav-h);
-  background: rgba(255, 255, 255, 0.92);
   border-bottom: 1px solid transparent;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   transition: border-color var(--base);
+}
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  pointer-events: none;
 }
 .nav.is-scrolled {
   border-bottom-color: var(--border-color);
