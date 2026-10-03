@@ -92,7 +92,7 @@ export default async function ApplyPage() {
                     <Star size={20} color="currentColor" />
                   </div>
                   <Icon size={44} />
-                  <h3 className="feature-card__title">{t(`roles.${role}`)}</h3>
+                  <h2 className="feature-card__title">{t(`roles.${role}`)}</h2>
                   <p>{t(`home.roles.items.${role}`)}</p>
                 </article>
               );

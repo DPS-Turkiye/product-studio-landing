@@ -24,6 +24,8 @@ export async function SiteFooter() {
               src="/images/logo-white.svg"
               alt="Product Studio"
               className="footer__logo"
+              width={659}
+              height={279}
             />
             <p className="footer__tagline">{t("footer.tagline")}</p>
           </div>
@@ -94,6 +96,8 @@ export async function SiteFooter() {
             <img
               src="/images/dps-logo-white.svg"
               alt="Digital Product School"
+              width={346}
+              height={114}
             />
           </a>
           <p className="muted">

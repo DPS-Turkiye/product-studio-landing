@@ -57,9 +57,9 @@ export function Marquee({ items }: { items: string[] }) {
     <div
       className="marquee"
       ref={containerRef}
-      aria-label={items.join(", ")}
       style={{ ["--marquee-duration" as string]: `${duration}s` }}
     >
+      <p className="sr-only">{items.join(", ")}</p>
       <div className="marquee__measure" ref={measureRef} aria-hidden="true">
         <Sequence items={items} />
       </div>

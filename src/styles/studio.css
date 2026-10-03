@@ -6,6 +6,8 @@
   --black: #0b0d14;
   --purple: #5832ff;
   --lime: #a6ff00;
+  --lime-on-light: #4a7c00;
+  --muted-on-dark: #8c8c96;
   --coral: #ff6668;
   --white: #ffffff;
   --off-white: #f2f2f7;
@@ -578,7 +580,7 @@ a:hover .arrow {
 }
 .mobile-menu__index {
   font-size: 13px;
-  color: var(--grey-500);
+  color: var(--muted-on-dark);
   letter-spacing: 0.04em;
 }
 
@@ -621,6 +623,7 @@ a:hover .arrow {
 .hero__logo img {
   width: min(560px, 100%);
   height: auto;
+  aspect-ratio: 659 / 279;
 }
 .hero__lines {
   margin-top: clamp(28px, 4vw, 48px);
@@ -633,7 +636,7 @@ a:hover .arrow {
   text-transform: uppercase;
 }
 .hero__lines .is-lime {
-  color: var(--lime);
+  color: var(--lime-on-light);
   -webkit-text-stroke: 0;
   text-shadow: none;
 }
@@ -827,7 +830,7 @@ a:hover .arrow {
 .journey__num {
   font-size: 13px;
   font-weight: 700;
-  color: var(--grey-500);
+  color: var(--text-secondary);
 }
 .journey__big {
   font-size: 56px;
@@ -1353,7 +1356,7 @@ a:hover .arrow {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--grey-500);
+  color: var(--text-secondary);
 }
 .batch-tab.is-active .batch-tab__season {
   color: var(--lime);
@@ -1557,7 +1560,7 @@ a.partner-mark:hover .partner-mark__name {
   color: var(--black);
 }
 .role-ai-engineer {
-  color: #4d7c0f;
+  color: #3f6a0c;
 }
 
 .avatar {
@@ -2250,7 +2253,7 @@ a.partner-mark:hover .partner-mark__name {
   color: var(--lime);
 }
 .footer .muted {
-  color: var(--grey-500);
+  color: var(--muted-on-dark);
 }
 .footer__social {
   display: flex;

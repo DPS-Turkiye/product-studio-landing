@@ -7,6 +7,7 @@ describe("routing", () => {
     expect(routing.locales).toEqual(["en", "tr"]);
     expect(routing.defaultLocale).toBe("en");
     expect(routing.localePrefix).toBe("as-needed");
+    expect(routing.alternateLinks).toBe(false);
   });
 
   it("localizes pathnames from the navigation labels", () => {

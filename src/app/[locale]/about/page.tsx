@@ -62,7 +62,12 @@ export default async function AboutPage() {
               rel="noopener noreferrer"
             >
               <span className="label">{t("common.supportedBy")}</span>
-              <img src="/images/dps-logo.svg" alt="Digital Product School" />
+              <img
+                src="/images/dps-logo.svg"
+                alt="Digital Product School"
+                width={346}
+                height={114}
+              />
             </a>
           </div>
         </div>
@@ -85,7 +90,7 @@ export default async function AboutPage() {
                   size={28}
                   color={index % 2 ? "var(--purple)" : "var(--lime)"}
                 />
-                <h3 className="h3">{value.title}</h3>
+                <h2 className="h3">{value.title}</h2>
                 <p>{value.text}</p>
               </div>
             ))}

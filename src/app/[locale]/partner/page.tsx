@@ -62,7 +62,7 @@ export default async function PartnerPage() {
                   </span>
                   <Star size={20} color="currentColor" />
                 </div>
-                <h3 className="feature-card__title">{benefit.title}</h3>
+                <h2 className="feature-card__title">{benefit.title}</h2>
                 <p>{benefit.text}</p>
               </article>
             ))}

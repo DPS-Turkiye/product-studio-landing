@@ -47,7 +47,12 @@ export function SiteHeader() {
     >
       <div className="container nav__inner">
         <Link href="/" className="nav__logo" aria-label="Product Studio — home">
-          <img src="/images/logo.svg" alt="Product Studio" />
+          <img
+            src="/images/logo.svg"
+            alt="Product Studio"
+            width={659}
+            height={279}
+          />
         </Link>
 
         <nav className="nav__links" aria-label="Main">

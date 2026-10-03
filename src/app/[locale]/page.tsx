@@ -66,7 +66,12 @@ export default async function HomePage() {
         <div className="container hero__grid">
           <div className="hero__copy">
             <h1 className="hero__logo">
-              <img src="/images/logo.svg" alt="Product Studio" />
+              <img
+                src="/images/logo.svg"
+                alt="Product Studio"
+                width={659}
+                height={279}
+              />
             </h1>
             <p className="hero__lines">
               {lines.map((line, index) => (
@@ -93,8 +98,9 @@ export default async function HomePage() {
               alt="Product Studio participants working together"
               width={882}
               height={941}
-              priority
-              sizes="(max-width: 1000px) 100vw, 50vw"
+              preload
+              fetchPriority="high"
+              sizes="(max-width: 1000px) 100vw, 720px"
               className="hero__photo"
             />
           </div>

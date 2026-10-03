@@ -60,8 +60,12 @@ export default async function RootLayout({
               {children}
             </main>
             <SiteFooter />
-            <Analytics />
-            <SpeedInsights />
+            {process.env.VERCEL ? (
+              <>
+                <Analytics />
+                <SpeedInsights />
+              </>
+            ) : null}
           </QueryProvider>
         </NextIntlClientProvider>
       </body>
