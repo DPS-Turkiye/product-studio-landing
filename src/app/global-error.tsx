@@ -1,7 +1,7 @@
 "use client";
 
+import { spaceGrotesk } from "@/app/font";
 import { Arrow, Star } from "@/components/icons";
-import { Space_Grotesk } from "next/font/google";
 import { useEffect } from "react";
 import "./globals.css";
 

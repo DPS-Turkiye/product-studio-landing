@@ -1,3 +1,4 @@
+import { spaceGrotesk } from "@/app/font";
 import { QueryProvider } from "@/components/query-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -5,7 +6,6 @@ import { routing } from "@/i18n/routing";
 import { getSiteUrl } from "@/lib/site-url";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Space_Grotesk } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 import type { Metadata, Viewport } from "next";
