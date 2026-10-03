@@ -7,7 +7,7 @@ import { createElement } from "react";
 import { Resend } from "resend";
 import type { Application, Partner } from "@/lib/submissions";
 
-export const RESEND_FROM = `Product Studio <${site.contactEmail}>`;
+export const RESEND_FROM = `Product Studio <${site.senderEmail}>`;
 export const RESEND_TO = [
   "ayanege2001@gmail.com",
   "nihan@dpsturkiye.com",

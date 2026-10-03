@@ -7,6 +7,7 @@ export type LocaleText = string | { en: string; tr: string };
 export type Site = {
   contactEmail: string;
   partnerEmail: string;
+  senderEmail: string;
   location: LocaleText;
   social: { linkedin: string; instagram: string; youtube: string };
   applications: {

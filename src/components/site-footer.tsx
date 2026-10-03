@@ -44,7 +44,9 @@ export async function SiteFooter() {
           <div className="footer__col">
             <p className="label">{t("footer.contact")}</p>
             <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
-            <a href={`mailto:${site.partnerEmail}`}>{site.partnerEmail}</a>
+            {site.partnerEmail !== site.contactEmail && (
+              <a href={`mailto:${site.partnerEmail}`}>{site.partnerEmail}</a>
+            )}
             <span className="muted">{loc(site.location, locale)}</span>
           </div>
 

@@ -1,11 +1,12 @@
 {
   "_note": "Site-wide settings. Edit and save; the website picks up changes on next page load (no rebuild needed).",
-  "contactEmail": "hello@productstudio.com.tr",
-  "partnerEmail": "partners@productstudio.com.tr",
+  "contactEmail": "info@dpsturkiye.com",
+  "partnerEmail": "info@dpsturkiye.com",
+  "senderEmail": "hello@productstudio.com.tr",
   "location": { "en": "Ankara, Türkiye", "tr": "Ankara, Türkiye" },
   "social": {
-    "linkedin": "https://www.linkedin.com/",
-    "instagram": "https://www.instagram.com/",
+    "linkedin": "https://www.linkedin.com/company/product%E2%80%94studio/",
+    "instagram": "",
     "youtube": ""
   },
   "applications": {
