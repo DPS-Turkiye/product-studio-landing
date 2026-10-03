@@ -380,6 +380,11 @@
     "text": "The page you are looking for does not exist or has moved.",
     "back": "Back to home"
   },
+  "error": {
+    "title": "Something went wrong.",
+    "text": "The page could not be loaded. Try again.",
+    "retry": "Try again"
+  },
   "Metadata": {
     "title": "Product Studio — Real challenges. Real teams. Real products.",
     "description": "Product Studio brings together interdisciplinary teams of product managers, designers, software and AI engineers to build tested digital products for real company challenges."

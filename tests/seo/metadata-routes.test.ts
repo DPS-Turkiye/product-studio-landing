@@ -64,6 +64,7 @@ describe("metadata routes", () => {
       rules: {
         userAgent: "*",
         allow: "/",
+        disallow: "/api/",
       },
       sitemap: "https://example.com/sitemap.xml",
     });

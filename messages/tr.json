@@ -380,6 +380,11 @@
     "text": "Aradığın sayfa mevcut değil veya taşınmış.",
     "back": "Ana sayfaya dön"
   },
+  "error": {
+    "title": "Bir şeyler ters gitti.",
+    "text": "Sayfa yüklenemedi. Yeniden dene.",
+    "retry": "Yeniden dene"
+  },
   "Metadata": {
     "title": "Product Studio — Gerçek problemler. Gerçek ekipler. Gerçek ürünler.",
     "description": "Ürün yöneticileri, tasarımcılar, yazılım ve yapay zekâ mühendislerinden oluşan disiplinlerarası ekiplerin, şirketlerin gerçek problemlerini test edilmiş dijital ürünlere dönüştürdüğü uygulamalı bir program."
