@@ -11,22 +11,24 @@
   "applications": {
     "open": true,
     "batch": "Batch #3",
-    "programStart": "2027-02-15",
-    "programEnd": "2027-05-07",
-    "deadline": "2026-12-15",
+    "season": { "en": "Summer 2027", "tr": "Yaz 2027" },
+    "programStart": "",
+    "programEnd": "",
+    "deadline": "",
     "format": { "en": "In person, full-time", "tr": "Yüz yüze, tam zamanlı" },
     "durationWeeks": 12
   },
   "stats": [
     { "value": "2", "label": { "en": "Batches", "tr": "Dönem" } },
     {
-      "value": "7",
+      "value": "6",
       "label": { "en": "Partner challenges", "tr": "Partner problemi" }
     },
-    { "value": "30+", "label": { "en": "Participants", "tr": "Katılımcı" } },
+    { "value": "24", "label": { "en": "Participants", "tr": "Katılımcı" } },
     {
       "value": "12",
       "label": { "en": "Weeks per batch", "tr": "Haftalık program" }
     }
-  ]
+  ],
+  "showParticipantLinkedin": false
 }

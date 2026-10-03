@@ -6,7 +6,6 @@ export const ROLES = [
   "product-manager",
   "interaction-designer",
   "software-engineer",
-  "ai-engineer",
 ] as const;
 
 export const STATUSES = [

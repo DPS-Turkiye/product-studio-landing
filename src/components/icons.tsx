@@ -241,13 +241,6 @@ export const OutlineIcons: Record<string, (props: OutlineProps) => ReactNode> =
         <path d="M16 12L4 24l12 12M32 12l12 12-12 12M28 6l-8 36" />
       </Outline>
     ),
-    "ai-engineer": (props) => (
-      <Outline {...props}>
-        <rect x="12" y="12" width="24" height="24" />
-        <rect x="19" y="19" width="10" height="10" />
-        <path d="M18 4v8M24 4v8M30 4v8M18 36v8M24 36v8M30 36v8M4 18h8M4 24h8M4 30h8M36 18h8M36 24h8M36 30h8" />
-      </Outline>
-    ),
     workshop: (props) => (
       <Outline {...props}>
         <rect x="4" y="6" width="40" height="26" />

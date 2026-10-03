@@ -12,8 +12,7 @@
   "roles": {
     "product-manager": "Product Manager",
     "interaction-designer": "Interaction Designer",
-    "software-engineer": "Software Engineer",
-    "ai-engineer": "AI Engineer"
+    "software-engineer": "Software Engineer"
   },
   "common": {
     "learnMore": "Learn more",
@@ -22,6 +21,8 @@
     "linkedin": "LinkedIn profile of {name}",
     "weeks": "weeks",
     "deadline": "Application deadline",
+    "tba": "To be announced",
+    "datesTba": "Dates to be announced",
     "programDates": "Program dates",
     "format": "Format",
     "supportedBy": "Supported by",
@@ -30,7 +31,7 @@
   "home": {
     "hero": {
       "lines": ["Real challenges.", "Real teams.", "Real products."],
-      "intro": "A hands-on program where interdisciplinary teams of product managers, designers, software and AI engineers turn real company challenges into tested digital products.",
+      "intro": "A hands-on program where interdisciplinary teams of product managers, designers and software engineers turn real company challenges into tested digital products.",
       "apply": "Apply now",
       "partner": "Become a partner"
     },
@@ -39,7 +40,7 @@
       "label": "What is Product Studio?",
       "title": "A hands-on product development experience.",
       "body": [
-        "Product Studio brings together interdisciplinary teams from product management, software engineering, AI engineering, interaction design and other roles.",
+        "Product Studio brings together interdisciplinary teams from product management, software engineering, interaction design and other roles.",
         "Together, they work on concrete digital challenges from companies — from problem definition through user research and prototyping to tested digital products."
       ],
       "spinoff": "Product Studio is a spin-off of Digital Product School, one of Europe’s best-known training programs for cross-functional product teams."
@@ -54,7 +55,7 @@
         },
         {
           "title": "Learn",
-          "text": "Workshops and mentoring on product, design, engineering and AI."
+          "text": "Workshops and mentoring on product, design and engineering."
         },
         {
           "title": "Build",
@@ -76,8 +77,7 @@
       "items": {
         "product-manager": "Frames the problem, aligns stakeholders and keeps the team focused on value.",
         "interaction-designer": "Talks to users, shapes the experience and turns insights into prototypes.",
-        "software-engineer": "Builds working software from day one and makes the product real.",
-        "ai-engineer": "Explores data and brings AI capabilities into the product responsibly."
+        "software-engineer": "Builds working software from day one and makes the product real."
       }
     },
     "equation": {
@@ -89,13 +89,17 @@
       "title": "Challenges from real companies.",
       "cta": "See all cases"
     },
+    "partners": {
+      "label": "Our partners",
+      "title": "Companies that brought us their challenges."
+    },
     "get": {
       "label": "What you get",
       "title": "More than a course.",
       "items": [
         {
           "title": "Workshops",
-          "text": "Practical sessions on product discovery, design, engineering and AI."
+          "text": "Practical sessions on product discovery, design and engineering."
         },
         {
           "title": "Mentorship",
@@ -118,6 +122,7 @@
     "cta": {
       "lines": ["Your team.", "Your product.", "Your challenge."],
       "text": "Applications for {batch} are open until {deadline}.",
+      "textTba": "Applications for {batch} ({season}) are open. Dates will be announced soon.",
       "closed": "Applications for the next batch will open soon. Leave your details and we will let you know.",
       "button": "Apply now"
     }
@@ -138,8 +143,6 @@
     "challenge": "Challenge",
     "partner": "Partner",
     "members": "Team members",
-    "filterRole": "Filter by role",
-    "allRoles": "All roles",
     "empty": "No teams have been announced for this batch yet."
   },
   "about": {
@@ -166,7 +169,7 @@
         },
         {
           "title": "Together",
-          "text": "Great products need product, design, engineering and AI in one team."
+          "text": "Great products need product, design and engineering in one team."
         },
         {
           "title": "Ship it",
@@ -177,8 +180,7 @@
     "mentors": {
       "label": "Mentors",
       "title": "Guided by practitioners.",
-      "intro": "Our mentors work in the industry every day. Each track is supported by experienced people who coach the teams throughout the batch.",
-      "all": "All tracks"
+      "intro": "Our mentors work in the industry every day and coach the teams throughout the batch."
     }
   },
   "partner": {
@@ -253,7 +255,7 @@
   "apply": {
     "label": "Apply now",
     "title": "Build real products with a real team.",
-    "intro": "Join Product Studio as a product manager, interaction designer, software engineer or AI engineer. Work full-time in a cross-functional team on a real challenge from a partner company.",
+    "intro": "Join Product Studio as a product manager, interaction designer or software engineer. Work full-time in a cross-functional team on a real challenge from a partner company.",
     "closedTitle": "Applications are currently closed.",
     "closedText": "You can still send your details. We will contact you when the next batch opens.",
     "rolesTitle": "Choose your role",
@@ -387,6 +389,6 @@
   },
   "Metadata": {
     "title": "Product Studio — Real challenges. Real teams. Real products.",
-    "description": "Product Studio brings together interdisciplinary teams of product managers, designers, software and AI engineers to build tested digital products for real company challenges."
+    "description": "Product Studio brings together interdisciplinary teams of product managers, designers and software engineers to build tested digital products for real company challenges."
   }
 }

@@ -1,103 +1,86 @@
 {
-  "_note": "SAMPLE DATA - replace with your real mentors. Put photos in content/images/mentors/ and reference them as 'mentors/file.jpg'. Leave photo empty to show initials. linkedin: full profile URL or empty.",
-  "tracks": [
+  "_note": "Mentor photos live in public/content/images/mentors/. The current .svg files are placeholders: drop in a real photo (e.g. mentors/name.jpg) and update the photo path, or leave photo empty to show initials. linkedin: full profile URL or empty.",
+  "mentors": [
     {
-      "id": "product-management",
-      "name": { "en": "Product Management", "tr": "Ürün Yönetimi" },
-      "description": {
-        "en": "Problem framing, prioritisation, stakeholder work and product strategy.",
-        "tr": "Problem tanımı, önceliklendirme, paydaş yönetimi ve ürün stratejisi."
+      "name": "Nihan Öztürk",
+      "title": {
+        "en": "Coordinator",
+        "tr": "Koordinatör"
       },
-      "mentors": [
-        {
-          "name": "Elif Kaya",
-          "title": {
-            "en": "Senior Product Manager",
-            "tr": "Kıdemli Ürün Yöneticisi"
-          },
-          "company": "Sample Company",
-          "photo": "",
-          "linkedin": "https://www.linkedin.com/in/your-profile"
-        },
-        {
-          "name": "Murat Demir",
-          "title": { "en": "Head of Product", "tr": "Ürün Direktörü" },
-          "company": "Sample Company",
-          "photo": "",
-          "linkedin": "https://www.linkedin.com/in/your-profile"
-        }
-      ]
+      "photo": "mentors/nihan-ozturk.svg",
+      "linkedin": "https://www.linkedin.com/in/nihanozturk/"
     },
     {
-      "id": "interaction-design",
-      "name": { "en": "Interaction Design", "tr": "Etkileşim Tasarımı" },
-      "description": {
-        "en": "User research, prototyping, usability testing and UI craft.",
-        "tr": "Kullanıcı araştırması, prototipleme, kullanılabilirlik testleri ve arayüz tasarımı."
+      "name": "Sümeyye Şimşekler",
+      "title": {
+        "en": "Interaction Design Coach",
+        "tr": "Etkileşim Tasarımı Koçu"
       },
-      "mentors": [
-        {
-          "name": "Zeynep Arslan",
-          "title": { "en": "Lead UX Designer", "tr": "Lider UX Tasarımcı" },
-          "company": "Sample Studio",
-          "photo": "",
-          "linkedin": "https://www.linkedin.com/in/your-profile"
-        },
-        {
-          "name": "Can Öztürk",
-          "title": { "en": "UX Researcher", "tr": "UX Araştırmacısı" },
-          "company": "Sample Company",
-          "photo": "",
-          "linkedin": "https://www.linkedin.com/in/your-profile"
-        }
-      ]
+      "photo": "mentors/sumeyye-simsekler.svg",
+      "linkedin": ""
     },
     {
-      "id": "software-engineering",
-      "name": { "en": "Software Engineering", "tr": "Yazılım Mühendisliği" },
-      "description": {
-        "en": "Architecture, clean code, delivery pipelines and shipping working software.",
-        "tr": "Mimari, temiz kod, teslimat süreçleri ve çalışan yazılım üretmek."
+      "name": "Mehmet Ali Altunsoy",
+      "title": {
+        "en": "Software Development Coach",
+        "tr": "Yazılım Geliştirme Koçu"
       },
-      "mentors": [
-        {
-          "name": "Burak Şahin",
-          "title": {
-            "en": "Staff Software Engineer",
-            "tr": "Staff Yazılım Mühendisi"
-          },
-          "company": "Sample Company",
-          "photo": "",
-          "linkedin": "https://www.linkedin.com/in/your-profile"
-        },
-        {
-          "name": "Selin Yıldız",
-          "title": {
-            "en": "Engineering Manager",
-            "tr": "Mühendislik Yöneticisi"
-          },
-          "company": "Sample Company",
-          "photo": "",
-          "linkedin": "https://www.linkedin.com/in/your-profile"
-        }
-      ]
+      "photo": "mentors/mehmet-ali-altunsoy.svg",
+      "linkedin": "https://www.linkedin.com/in/mehmet-ali-altunsoy/"
     },
     {
-      "id": "ai-engineering",
-      "name": { "en": "AI Engineering", "tr": "Yapay Zekâ Mühendisliği" },
-      "description": {
-        "en": "Data, machine learning and building responsible AI features into products.",
-        "tr": "Veri, makine öğrenmesi ve ürünlere sorumlu yapay zekâ özellikleri eklemek."
+      "name": "Ege Ayan",
+      "title": {
+        "en": "Software Development Coach",
+        "tr": "Yazılım Geliştirme Koçu"
       },
-      "mentors": [
-        {
-          "name": "Deniz Aydın",
-          "title": { "en": "ML Engineer", "tr": "ML Mühendisi" },
-          "company": "Sample AI Lab",
-          "photo": "",
-          "linkedin": "https://www.linkedin.com/in/your-profile"
-        }
-      ]
+      "photo": "mentors/ege-ayan.svg",
+      "linkedin": "https://www.linkedin.com/in/ege-ayan/"
+    },
+    {
+      "name": "Ata Gün Öğün",
+      "title": {
+        "en": "Software Development Coach",
+        "tr": "Yazılım Geliştirme Koçu"
+      },
+      "photo": "mentors/ata-gun-ogun.svg",
+      "linkedin": "https://www.linkedin.com/in/atgnz/"
+    },
+    {
+      "name": "Ali Efe Karagül",
+      "title": {
+        "en": "Software Development Coach",
+        "tr": "Yazılım Geliştirme Koçu"
+      },
+      "photo": "mentors/ali-efe-karagul.svg",
+      "linkedin": "https://www.linkedin.com/in/ali-efe-karagul/"
+    },
+    {
+      "name": "Pelin Kılıç",
+      "title": {
+        "en": "Software Development Coach",
+        "tr": "Yazılım Geliştirme Koçu"
+      },
+      "photo": "mentors/pelin-kilic.svg",
+      "linkedin": "https://www.linkedin.com/in/pelin-k%C4%B1l%C4%B1%C3%A7-20968b10b/"
+    },
+    {
+      "name": "Yasemin Yılmaz",
+      "title": {
+        "en": "Product Management Coach",
+        "tr": "Ürün Yönetimi Koçu"
+      },
+      "photo": "mentors/yasemin-yilmaz.svg",
+      "linkedin": "https://www.linkedin.com/in/yasemin-y%C4%B1lmaz-777230224/"
+    },
+    {
+      "name": "Hazal Güngör",
+      "title": {
+        "en": "Retrospective Coach",
+        "tr": "Retrospektif Koçu"
+      },
+      "photo": "mentors/hazal-gungor.svg",
+      "linkedin": "https://www.linkedin.com/in/g%C3%B6k%C3%A7en-hazal-g%C3%BCng%C3%B6r-762b0020a/"
     }
   ]
 }

@@ -5,12 +5,7 @@ import { formatDate, formatRange, loc, site } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { getLocale, getTranslations } from "next-intl/server";
 
-const ROLES = [
-  "product-manager",
-  "interaction-designer",
-  "software-engineer",
-  "ai-engineer",
-];
+const ROLES = ["product-manager", "interaction-designer", "software-engineer"];
 
 export async function generateMetadata() {
   const t = await getTranslations();
@@ -43,17 +38,23 @@ export default async function ApplyPage() {
           <div>
             <dt className="label">{t("common.programDates")}</dt>
             <dd>
-              {formatRange(
-                applications.programStart,
-                applications.programEnd,
-                locale,
-              )}
+              {applications.programStart && applications.programEnd
+                ? formatRange(
+                    applications.programStart,
+                    applications.programEnd,
+                    locale,
+                  )
+                : `${loc(applications.season, locale)} · ${t("common.datesTba")}`}
             </dd>
           </div>
           {applications.open && (
             <div>
               <dt className="label">{t("common.deadline")}</dt>
-              <dd>{formatDate(applications.deadline, locale)}</dd>
+              <dd>
+                {applications.deadline
+                  ? formatDate(applications.deadline, locale)
+                  : t("common.tba")}
+              </dd>
             </div>
           )}
           <div>
@@ -77,7 +78,7 @@ export default async function ApplyPage() {
       <section className="section section-tight">
         <div className="container">
           <SectionLabel index="01">{t("apply.rolesTitle")}</SectionLabel>
-          <div className="cards-4 mt-6">
+          <div className="cards-3 mt-6">
             {ROLES.map((role, index) => {
               const Icon = OutlineIcons[role];
               return (

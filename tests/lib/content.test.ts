@@ -24,6 +24,7 @@ describe("content helpers", () => {
     expect(initials("   ")).toBe("");
     expect(initials("Ada")).toBe("A");
     expect(initials("  ada   lovelace  extra ")).toBe("AL");
+    expect(initials("Hamid (Arya) Zaeri")).toBe("HZ");
   });
 
   it("formats dates and ranges without padding the day", () => {

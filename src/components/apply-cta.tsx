@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/navigation";
-import { formatDate, site } from "@/lib/content";
+import { formatDate, loc, site } from "@/lib/content";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Arrow } from "./icons";
 
@@ -19,12 +19,17 @@ export async function ApplyCta() {
             ))}
           </h2>
           <p className="body-lg cta__text">
-            {applications.open
-              ? t("home.cta.text", {
-                  batch: applications.batch,
-                  deadline: formatDate(applications.deadline, locale),
-                })
-              : t("home.cta.closed")}
+            {!applications.open
+              ? t("home.cta.closed")
+              : applications.deadline
+                ? t("home.cta.text", {
+                    batch: applications.batch,
+                    deadline: formatDate(applications.deadline, locale),
+                  })
+                : t("home.cta.textTba", {
+                    batch: applications.batch,
+                    season: loc(applications.season, locale),
+                  })}
           </p>
         </div>
         <Link

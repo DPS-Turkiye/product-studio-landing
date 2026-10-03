@@ -1,7 +1,7 @@
 import { PartnerForm } from "@/components/forms";
 import { Arrow, DotGrid, Star } from "@/components/icons";
-import { Button, PageHero, SectionLabel } from "@/components/ui";
-import { batches, img, site } from "@/lib/content";
+import { Button, PageHero, PartnerStrip, SectionLabel } from "@/components/ui";
+import { partners, site } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { getTranslations } from "next-intl/server";
 
@@ -22,16 +22,6 @@ export default async function PartnerPage() {
   }[];
   const steps = t.raw("partner.how.steps") as { title: string; text: string }[];
   const ways = t.raw("partner.ways.items") as { title: string; text: string }[];
-  const partners: { name: string; logo?: string }[] = [];
-  const seen = new Set<string>();
-  for (const batch of batches) {
-    for (const team of batch.teams) {
-      if (!seen.has(team.partner.name)) {
-        seen.add(team.partner.name);
-        partners.push(team.partner);
-      }
-    }
-  }
 
   return (
     <>
@@ -67,19 +57,7 @@ export default async function PartnerPage() {
               </article>
             ))}
           </div>
-          {partners.length > 0 && (
-            <div className="partner-strip">
-              {partners.map((partner) => (
-                <div className="partner-strip__item" key={partner.name}>
-                  {partner.logo ? (
-                    <img src={img(partner.logo) ?? ""} alt={partner.name} />
-                  ) : (
-                    <span>{partner.name}</span>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
+          <PartnerStrip partners={partners} />
         </div>
       </section>
 
