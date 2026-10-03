@@ -13,6 +13,7 @@ import "../globals.css";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
+  display: "optional",
 });
 
 export function generateStaticParams() {
