@@ -6,7 +6,6 @@
   --black: #0b0d14;
   --purple: #5832ff;
   --lime: #a6ff00;
-  --lime-on-light: #4a7c00;
   --muted-on-dark: #8c8c96;
   --coral: #ff6668;
   --white: #ffffff;
@@ -615,7 +614,7 @@ a:hover .arrow {
   text-transform: uppercase;
 }
 .hero__lines .is-lime {
-  color: var(--lime-on-light);
+  color: var(--lime);
   -webkit-text-stroke: 0;
   text-shadow: none;
 }
