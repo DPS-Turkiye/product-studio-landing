@@ -12,13 +12,15 @@ export type Site = {
   applications: {
     open: boolean;
     batch: string;
-    programStart: string;
-    programEnd: string;
-    deadline: string;
+    season?: LocaleText;
+    programStart?: string;
+    programEnd?: string;
+    deadline?: string;
     format: LocaleText;
     durationWeeks: number;
   };
   stats: { value: string; label: LocaleText }[];
+  showParticipantLinkedin?: boolean;
 };
 
 export type Member = {
@@ -31,6 +33,7 @@ export type Member = {
 export type TeamPartner = {
   name: string;
   logo?: string;
+  logoInvert?: boolean;
   website?: string;
 };
 
@@ -38,7 +41,7 @@ export type Team = {
   id: string;
   name: string;
   partner: TeamPartner;
-  challenge: LocaleText;
+  challenge?: LocaleText;
   tags?: string[];
   members: Member[];
 };
@@ -47,8 +50,8 @@ export type Batch = {
   id: string;
   name: string;
   season: LocaleText;
-  start: string;
-  end: string;
+  start?: string;
+  end?: string;
   status: string;
   summary?: LocaleText;
   photo?: string;
@@ -63,16 +66,18 @@ export type Mentor = {
   linkedin?: string;
 };
 
-export type Track = {
-  id: string;
-  name: LocaleText;
-  description?: LocaleText;
-  mentors: Mentor[];
-};
-
 export const site = siteFile as Site;
 export const batches = batchesFile.batches as Batch[];
-export const tracks = mentorsFile.tracks as Track[];
+export const mentors = mentorsFile.mentors as Mentor[];
+
+export const partners: TeamPartner[] = [];
+for (const batch of batches) {
+  for (const team of batch.teams) {
+    if (!partners.some((partner) => partner.name === team.partner.name)) {
+      partners.push(team.partner);
+    }
+  }
+}
 
 export function loc(value: LocaleText | undefined, locale: string) {
   if (!value) return "";
@@ -89,7 +94,7 @@ export function img(src?: string) {
 export function initials(name = "") {
   return name
     .split(/\s+/)
-    .filter(Boolean)
+    .filter((word) => /^\p{L}/u.test(word))
     .slice(0, 2)
     .map((word) => word[0])
     .join("")

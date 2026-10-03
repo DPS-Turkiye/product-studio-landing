@@ -1,169 +1,124 @@
 {
-  "_note": "SAMPLE DATA - replace with your real batches. Newest batch first. role must be one of: product-manager, interaction-designer, software-engineer, ai-engineer. Images go in content/images/ (e.g. 'partners/logo.svg', 'members/name.jpg', 'batches/batch-2.jpg').",
+  "_note": "Newest batch first. role must be one of: product-manager, interaction-designer, software-engineer. challenge and tags are optional. Images go in public/content/images/ and are referenced as e.g. 'partners/logo.svg'. Participant LinkedIn links are hidden while site.json has showParticipantLinkedin: false. Set partner.logoInvert: true for white logos so they show on light backgrounds.",
   "batches": [
     {
       "id": "batch-2",
       "name": "Batch #2",
-      "season": { "en": "Autumn 2026", "tr": "Güz 2026" },
-      "start": "2026-09-07",
-      "end": "2026-11-27",
-      "status": "ongoing",
+      "season": {
+        "en": "Summer 2026",
+        "tr": "Yaz 2026"
+      },
+      "start": "",
+      "end": "",
+      "status": "completed",
       "summary": {
-        "en": "Four teams working on mobility, finance, health and public-sector challenges.",
-        "tr": "Mobilite, finans, sağlık ve kamu alanlarında dört ekip."
+        "en": "Three teams working on challenges from MagicLab Game Technologies, Erasmus For Young Entrepreneurs and ODTÜ Teknokent.",
+        "tr": "MagicLab Game Technologies, Erasmus For Young Entrepreneurs ve ODTÜ Teknokent’in problemleri üzerinde çalışan üç ekip."
       },
       "photo": "",
       "teams": [
         {
-          "id": "northwind",
-          "name": "Team Northwind",
+          "id": "magiclab",
+          "name": "Team MagicLab",
           "partner": {
-            "name": "Northwind Mobility",
-            "logo": "",
-            "website": ""
+            "name": "MagicLab Game Technologies",
+            "logo": "partners/magiclab.webp",
+            "website": "https://www.maglab.com.tr",
+            "logoInvert": true
           },
-          "challenge": {
-            "en": "How might we help daily commuters plan multi-modal trips with confidence?",
-            "tr": "Günlük yolcuların farklı ulaşım türlerini birleştiren yolculukları güvenle planlamasına nasıl yardımcı olabiliriz?"
-          },
-          "tags": ["Mobility", "Mobile app"],
           "members": [
             {
-              "name": "Ayşe Yılmaz",
+              "name": "Çağrı Demir",
               "role": "product-manager",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "https://www.linkedin.com/in/%C3%A7a%C4%9Fr%C4%B1-demir-2941a9338/",
               "photo": ""
             },
             {
-              "name": "Emre Koç",
+              "name": "Gülse Buran",
               "role": "interaction-designer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "https://www.linkedin.com/in/g%C3%BClse-buran-330b55218/",
               "photo": ""
             },
             {
-              "name": "Mert Çelik",
+              "name": "Sudenaz Yılmaz",
               "role": "software-engineer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "https://www.linkedin.com/in/sudenaz-y%C4%B1lmaz-1995b621a/",
               "photo": ""
             },
             {
-              "name": "İrem Aksoy",
+              "name": "Hamid (Arya) Zaeri",
               "role": "software-engineer",
-              "linkedin": "",
-              "photo": ""
-            },
-            {
-              "name": "Kerem Polat",
-              "role": "ai-engineer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "https://www.linkedin.com/in/arya-zaeri/",
               "photo": ""
             }
           ]
         },
         {
-          "id": "kestrel",
-          "name": "Team Kestrel",
-          "partner": { "name": "Kestrel Bank", "logo": "", "website": "" },
-          "challenge": {
-            "en": "How might we make saving a habit for first-time earners?",
-            "tr": "İlk kez gelir elde eden gençler için birikim yapmayı nasıl alışkanlığa dönüştürebiliriz?"
+          "id": "erasmus",
+          "name": "Team Erasmus",
+          "partner": {
+            "name": "Erasmus For Young Entrepreneurs",
+            "logo": "partners/erasmus.jpg",
+            "website": "https://www.erasmus-entrepreneurs.eu"
           },
-          "tags": ["FinTech", "Behaviour change"],
           "members": [
             {
-              "name": "Ece Güneş",
+              "name": "İbrahim Çoban",
               "role": "product-manager",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "https://www.linkedin.com/in/ibrahimcobvn/",
               "photo": ""
             },
             {
-              "name": "Onur Kılıç",
+              "name": "Ortunç Uslu",
               "role": "interaction-designer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "https://www.linkedin.com/in/ortunc-uslu/",
               "photo": ""
             },
             {
-              "name": "Berk Aslan",
+              "name": "Ahmed Shaheer",
               "role": "software-engineer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "https://www.linkedin.com/in/ahmed-shaheer-822411298/",
               "photo": ""
             },
             {
-              "name": "Duygu Kara",
+              "name": "Elif Naz",
               "role": "software-engineer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "https://www.linkedin.com/in/naztls/",
               "photo": ""
             }
           ]
         },
         {
-          "id": "helix",
-          "name": "Team Helix",
-          "partner": { "name": "Helix Health", "logo": "", "website": "" },
-          "challenge": {
-            "en": "How might we reduce no-shows for outpatient appointments?",
-            "tr": "Poliklinik randevularına gelmeme oranını nasıl azaltabiliriz?"
+          "id": "odtu-teknokent",
+          "name": "Team ODTÜ Teknokent",
+          "partner": {
+            "name": "ODTÜ Teknokent",
+            "logo": "partners/odtu-teknokent.png",
+            "website": "https://odtuteknokent.com.tr"
           },
-          "tags": ["HealthTech", "AI"],
           "members": [
             {
-              "name": "Gizem Tunç",
+              "name": "Helin Bacınoğlu",
               "role": "product-manager",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "https://www.linkedin.com/in/helin-bac%C4%B1no%C4%9Flu-7b2293219/",
               "photo": ""
             },
             {
-              "name": "Arda Erdem",
+              "name": "Amir M. Nejadmehr",
               "role": "interaction-designer",
-              "linkedin": "",
+              "linkedin": "https://www.linkedin.com/in/amir-m-nejadmehr/",
               "photo": ""
             },
             {
-              "name": "Yusuf Kurt",
+              "name": "Saba Sorourian",
               "role": "software-engineer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "https://www.linkedin.com/in/sabasorourian/",
               "photo": ""
             },
             {
-              "name": "Nazlı Özer",
-              "role": "ai-engineer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
-              "photo": ""
-            }
-          ]
-        },
-        {
-          "id": "civic",
-          "name": "Team Civic",
-          "partner": { "name": "Civic Lab", "logo": "", "website": "" },
-          "challenge": {
-            "en": "How might we make municipal services easier to find for new residents?",
-            "tr": "Şehre yeni taşınanların belediye hizmetlerine ulaşmasını nasıl kolaylaştırabiliriz?"
-          },
-          "tags": ["GovTech", "Web"],
-          "members": [
-            {
-              "name": "Sena Yavuz",
-              "role": "product-manager",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
-              "photo": ""
-            },
-            {
-              "name": "Tolga Bulut",
-              "role": "interaction-designer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
-              "photo": ""
-            },
-            {
-              "name": "Cem Acar",
+              "name": "Kutay Ayoğlu",
               "role": "software-engineer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
-              "photo": ""
-            },
-            {
-              "name": "Melis Doğan",
-              "role": "software-engineer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "https://www.linkedin.com/in/kutayoglu/",
               "photo": ""
             }
           ]
@@ -173,46 +128,48 @@
     {
       "id": "batch-1",
       "name": "Batch #1",
-      "season": { "en": "Spring 2026", "tr": "Bahar 2026" },
-      "start": "2026-02-23",
-      "end": "2026-05-15",
+      "season": {
+        "en": "Summer 2025",
+        "tr": "Yaz 2025"
+      },
+      "start": "",
+      "end": "",
       "status": "completed",
       "summary": {
-        "en": "Our first batch: three teams, three partners, three tested prototypes on Demo Day.",
-        "tr": "İlk dönemimiz: üç ekip, üç partner ve Demo Day'de test edilmiş üç prototip."
+        "en": "Our first batch: three teams working on challenges from Onedio, Ankara Otomat and ODTÜ Teknokent.",
+        "tr": "İlk dönemimiz: Onedio, Ankara Otomat ve ODTÜ Teknokent’in problemleri üzerinde çalışan üç ekip."
       },
       "photo": "",
       "teams": [
         {
-          "id": "orbit",
-          "name": "Team Orbit",
-          "partner": { "name": "Orbit Logistics", "logo": "", "website": "" },
-          "challenge": {
-            "en": "How might we give warehouse staff real-time visibility of incoming shipments?",
-            "tr": "Depo çalışanlarına gelen sevkiyatları gerçek zamanlı nasıl gösterebiliriz?"
+          "id": "onedio",
+          "name": "Team Onedio",
+          "partner": {
+            "name": "Onedio",
+            "logo": "partners/onedio.svg",
+            "website": "https://onedio.com"
           },
-          "tags": ["Logistics", "Dashboard"],
           "members": [
             {
-              "name": "Ahmet Uçar",
+              "name": "Wahib Rizwan",
               "role": "product-manager",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "",
               "photo": ""
             },
             {
-              "name": "Buse Kaplan",
+              "name": "Sude Sürmen",
               "role": "interaction-designer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "",
               "photo": ""
             },
             {
-              "name": "Oğuz Er",
+              "name": "Taha Khan",
               "role": "software-engineer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "",
               "photo": ""
             },
             {
-              "name": "Pelin Sarı",
+              "name": "Alperen Bitirgen",
               "role": "software-engineer",
               "linkedin": "",
               "photo": ""
@@ -220,73 +177,72 @@
           ]
         },
         {
-          "id": "terra",
-          "name": "Team Terra",
-          "partner": { "name": "Terra Energy", "logo": "", "website": "" },
-          "challenge": {
-            "en": "How might we help households understand and cut their energy use?",
-            "tr": "Hanelerin enerji tüketimlerini anlamasına ve azaltmasına nasıl yardımcı olabiliriz?"
+          "id": "ankara-otomat",
+          "name": "Team Ankara Otomat",
+          "partner": {
+            "name": "Ankara Otomat",
+            "logo": "partners/ankara-otomat.png",
+            "website": "https://www.ankaraotomat.com",
+            "logoInvert": true
           },
-          "tags": ["Energy", "Sustainability"],
           "members": [
             {
-              "name": "Hande Ateş",
+              "name": "Dilara Bayındır",
               "role": "product-manager",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "",
               "photo": ""
             },
             {
-              "name": "Kaan Yurt",
-              "role": "interaction-designer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
-              "photo": ""
-            },
-            {
-              "name": "Ozan Tekin",
-              "role": "software-engineer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
-              "photo": ""
-            },
-            {
-              "name": "Ceren Işık",
-              "role": "ai-engineer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
-              "photo": ""
-            }
-          ]
-        },
-        {
-          "id": "pixel",
-          "name": "Team Pixel",
-          "partner": { "name": "Pixel Retail", "logo": "", "website": "" },
-          "challenge": {
-            "en": "How might we bring the in-store advice experience to online shoppers?",
-            "tr": "Mağazadaki danışmanlık deneyimini online alışverişe nasıl taşıyabiliriz?"
-          },
-          "tags": ["Retail", "Conversational AI"],
-          "members": [
-            {
-              "name": "Yağmur Bal",
-              "role": "product-manager",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
-              "photo": ""
-            },
-            {
-              "name": "Efe Karaca",
+              "name": "Sinan Yazıcıoğlu",
               "role": "interaction-designer",
               "linkedin": "",
               "photo": ""
             },
             {
-              "name": "Batuhan Gül",
+              "name": "Fouzan Tarıq",
               "role": "software-engineer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "linkedin": "",
               "photo": ""
             },
             {
-              "name": "Derya Oral",
-              "role": "ai-engineer",
-              "linkedin": "https://www.linkedin.com/in/your-profile",
+              "name": "Nansy İbrahim",
+              "role": "software-engineer",
+              "linkedin": "",
+              "photo": ""
+            }
+          ]
+        },
+        {
+          "id": "odtu-teknokent",
+          "name": "Team ODTÜ Teknokent",
+          "partner": {
+            "name": "ODTÜ Teknokent",
+            "logo": "partners/odtu-teknokent.png",
+            "website": "https://odtuteknokent.com.tr"
+          },
+          "members": [
+            {
+              "name": "Behnan Gültaş",
+              "role": "product-manager",
+              "linkedin": "",
+              "photo": ""
+            },
+            {
+              "name": "Bilge Güvenç",
+              "role": "interaction-designer",
+              "linkedin": "",
+              "photo": ""
+            },
+            {
+              "name": "Alwaz Ahmed",
+              "role": "software-engineer",
+              "linkedin": "",
+              "photo": ""
+            },
+            {
+              "name": "Zeynep Mert",
+              "role": "software-engineer",
+              "linkedin": "",
               "photo": ""
             }
           ]

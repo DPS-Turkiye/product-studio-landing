@@ -155,10 +155,10 @@ describe("email rows", () => {
       )?.value,
     ).toBe("Interaction Designer");
     expect(
-      applicationRows(application({ role: "ai-engineer" })).find(
+      applicationRows(application({ role: "software-engineer" })).find(
         (row) => row.label === "Role",
       )?.value,
-    ).toBe("AI Engineer");
+    ).toBe("Software Engineer");
 
     expect(
       applicationRows(application({ status: "student" })).find(

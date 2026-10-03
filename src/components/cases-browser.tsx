@@ -1,10 +1,10 @@
 "use client";
 
 import { Link, useRouter } from "@/i18n/navigation";
-import { formatRange, img, loc } from "@/lib/content";
+import { formatRange, img, loc, site } from "@/lib/content";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { Arrow, Star } from "./icons";
 import { Avatar, Tag } from "./ui";
 import type { Batch } from "@/lib/content";
@@ -13,7 +13,6 @@ const ROLE_ORDER = [
   "product-manager",
   "interaction-designer",
   "software-engineer",
-  "ai-engineer",
 ];
 
 function LinkedInLink({ href, name }: { href?: string; name: string }) {
@@ -47,7 +46,11 @@ function PartnerMark({
 }) {
   const logo = img(partner.logo);
   const content = logo ? (
-    <img src={logo} alt={partner.name} className="partner-mark__logo" />
+    <img
+      src={logo}
+      alt={partner.name}
+      className={`partner-mark__logo ${partner.logoInvert ? "logo-invert" : ""}`}
+    />
   ) : (
     <span className="partner-mark__name">{partner.name}</span>
   );
@@ -75,7 +78,6 @@ export function CasesBrowser({
   const t = useTranslations();
   const locale = useLocale();
   const router = useRouter();
-  const [roleFilter, setRoleFilter] = useState("");
   const active = batches.find((batch) => batch.id === activeId) ?? batches[0];
   const photo = img(active?.photo);
 
@@ -105,10 +107,7 @@ export function CasesBrowser({
 
   if (!active || !counts) return null;
 
-  const teams = active.teams.filter(
-    (team) =>
-      !roleFilter || team.members.some((member) => member.role === roleFilter),
-  );
+  const teams = active.teams;
 
   return (
     <>
@@ -151,7 +150,9 @@ export function CasesBrowser({
             </Tag>
           </div>
           <p className="label muted">
-            {formatRange(active.start, active.end, locale)}
+            {active.start && active.end
+              ? formatRange(active.start, active.end, locale)
+              : loc(active.season, locale)}
           </p>
           {active.summary && (
             <p className="body-lg">{loc(active.summary, locale)}</p>
@@ -192,25 +193,6 @@ export function CasesBrowser({
           ))}
       </div>
 
-      <div
-        className="role-filter"
-        role="group"
-        aria-label={t("cases.filterRole")}
-      >
-        <span className="label">{t("cases.filterRole")}</span>
-        {["", ...ROLE_ORDER].map((role) => (
-          <button
-            key={role || "all"}
-            type="button"
-            className={`chip ${roleFilter === role ? "is-active" : ""}`}
-            aria-pressed={roleFilter === role}
-            onClick={() => setRoleFilter(role)}
-          >
-            {role ? t(`roles.${role}`) : t("cases.allRoles")}
-          </button>
-        ))}
-      </div>
-
       {teams.length === 0 ? (
         <p className="state-msg">{t("cases.empty")}</p>
       ) : (
@@ -230,10 +212,14 @@ export function CasesBrowser({
                 </header>
                 <div className="team-card__body">
                   <h3 className="team-card__name">{team.name}</h3>
-                  <p className="label muted">{t("cases.challenge")}</p>
-                  <p className="team-card__challenge">
-                    {loc(team.challenge, locale)}
-                  </p>
+                  {team.challenge && (
+                    <>
+                      <p className="label muted">{t("cases.challenge")}</p>
+                      <p className="team-card__challenge">
+                        {loc(team.challenge, locale)}
+                      </p>
+                    </>
+                  )}
                   {team.tags && team.tags.length > 0 && (
                     <div className="tag-row">
                       {team.tags.map((tag) => (
@@ -246,12 +232,8 @@ export function CasesBrowser({
                   <p className="label muted">{t("cases.members")}</p>
                   <ul>
                     {members.map((member, index) => {
-                      const dim = roleFilter && member.role !== roleFilter;
                       return (
-                        <li
-                          key={index}
-                          className={`member ${dim ? "is-dim" : ""}`}
-                        >
+                        <li key={index} className="member">
                           <Avatar
                             name={member.name}
                             photo={member.photo}
@@ -265,10 +247,12 @@ export function CasesBrowser({
                               {t(`roles.${member.role}`)}
                             </span>
                           </div>
-                          <LinkedInLink
-                            href={member.linkedin}
-                            name={member.name}
-                          />
+                          {site.showParticipantLinkedin && (
+                            <LinkedInLink
+                              href={member.linkedin}
+                              name={member.name}
+                            />
+                          )}
                         </li>
                       );
                     })}

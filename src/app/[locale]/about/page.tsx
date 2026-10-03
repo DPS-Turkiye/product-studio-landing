@@ -2,7 +2,7 @@ import { ApplyCta } from "@/components/apply-cta";
 import { DotGrid, Star } from "@/components/icons";
 import { MentorBrowser } from "@/components/mentor-browser";
 import { PageHero, SectionLabel } from "@/components/ui";
-import { tracks } from "@/lib/content";
+import { mentors } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
@@ -98,7 +98,7 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <MentorBrowser tracks={tracks} />
+      <MentorBrowser mentors={mentors} />
       <ApplyCta />
     </>
   );

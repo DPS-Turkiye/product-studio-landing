@@ -113,7 +113,7 @@ describe("mail", () => {
     const roles = [
       ["product-manager", "Product Manager"],
       ["interaction-designer", "Interaction Designer"],
-      ["ai-engineer", "AI Engineer"],
+      ["software-engineer", "Software Engineer"],
     ] as const;
     for (const [role, label] of roles) {
       await sendApplication(application({ role }));

@@ -116,7 +116,7 @@ describe("application form", () => {
     fireEvent.change(control("Current status"), {
       target: { value: "other" },
     });
-    fireEvent.click(screen.getByRole("radio", { name: "AI Engineer" }));
+    fireEvent.click(screen.getByRole("radio", { name: "Software Engineer" }));
     type("Why do you want to join Product Studio?", motivation);
     fireEvent.click(screen.getByRole("checkbox", { name: /full-time/ }));
     fireEvent.click(screen.getByRole("checkbox", { name: /personal data/ }));

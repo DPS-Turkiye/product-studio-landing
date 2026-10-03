@@ -11,7 +11,6 @@ const ROLE_LABELS: Record<Application["role"], string> = {
   "product-manager": "Product Manager",
   "interaction-designer": "Interaction Designer",
   "software-engineer": "Software Engineer",
-  "ai-engineer": "AI Engineer",
 };
 
 const STATUS_LABELS: Record<Application["status"], string> = {

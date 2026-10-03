@@ -2,6 +2,7 @@ import { Link } from "@/i18n/navigation";
 import { img, initials } from "@/lib/content";
 import Image from "next/image";
 import { Arrow, Star } from "./icons";
+import type { TeamPartner } from "@/lib/content";
 import type { ComponentProps, ReactNode } from "react";
 
 type LinkHref = ComponentProps<typeof Link>["href"];
@@ -126,6 +127,40 @@ export function Avatar({
       ) : (
         <span aria-hidden="true">{initials(name)}</span>
       )}
+    </div>
+  );
+}
+
+export function PartnerStrip({ partners }: { partners: TeamPartner[] }) {
+  if (partners.length === 0) return null;
+  return (
+    <div className="partner-strip">
+      {partners.map((partner) => {
+        const content = partner.logo ? (
+          <img
+            src={img(partner.logo) ?? ""}
+            alt={partner.name}
+            className={partner.logoInvert ? "logo-invert" : undefined}
+          />
+        ) : (
+          <span>{partner.name}</span>
+        );
+        return partner.website ? (
+          <a
+            className="partner-strip__item"
+            key={partner.name}
+            href={partner.website}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {content}
+          </a>
+        ) : (
+          <div className="partner-strip__item" key={partner.name}>
+            {content}
+          </div>
+        );
+      })}
     </div>
   );
 }

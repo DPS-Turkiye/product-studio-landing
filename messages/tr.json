@@ -12,8 +12,7 @@
   "roles": {
     "product-manager": "Ürün Yöneticisi",
     "interaction-designer": "Etkileşim Tasarımcısı",
-    "software-engineer": "Yazılım Mühendisi",
-    "ai-engineer": "Yapay Zekâ Mühendisi"
+    "software-engineer": "Yazılım Mühendisi"
   },
   "common": {
     "learnMore": "Daha fazla",
@@ -22,6 +21,8 @@
     "linkedin": "{name} LinkedIn profili",
     "weeks": "hafta",
     "deadline": "Son başvuru tarihi",
+    "tba": "Yakında açıklanacak",
+    "datesTba": "Tarihler yakında açıklanacak",
     "programDates": "Program tarihleri",
     "format": "Format",
     "supportedBy": "Destekleyen",
@@ -30,7 +31,7 @@
   "home": {
     "hero": {
       "lines": ["Gerçek problemler.", "Gerçek ekipler.", "Gerçek ürünler."],
-      "intro": "Ürün yöneticileri, tasarımcılar, yazılım ve yapay zekâ mühendislerinden oluşan disiplinlerarası ekiplerin, şirketlerin gerçek problemlerini test edilmiş dijital ürünlere dönüştürdüğü uygulamalı bir program.",
+      "intro": "Ürün yöneticileri, tasarımcılar ve yazılım mühendislerinden oluşan disiplinlerarası ekiplerin, şirketlerin gerçek problemlerini test edilmiş dijital ürünlere dönüştürdüğü uygulamalı bir program.",
       "apply": "Hemen başvur",
       "partner": "Partner ol"
     },
@@ -39,7 +40,7 @@
       "label": "Product Studio nedir?",
       "title": "Uygulamalı bir ürün geliştirme deneyimi.",
       "body": [
-        "Product Studio; ürün yönetimi, yazılım mühendisliği, yapay zekâ mühendisliği, etkileşim tasarımı ve diğer rollerden gelen disiplinlerarası ekipleri bir araya getirir.",
+        "Product Studio; ürün yönetimi, yazılım mühendisliği, etkileşim tasarımı ve diğer rollerden gelen disiplinlerarası ekipleri bir araya getirir.",
         "Ekipler, şirketlerden gelen somut dijital problemler üzerinde birlikte çalışır — problem tanımından kullanıcı araştırmasına, prototiplemeden test edilmiş dijital ürünlere kadar."
       ],
       "spinoff": "Product Studio, çapraz fonksiyonlu ürün ekipleri için Avrupa’nın en bilinen eğitim programlarından biri olan Digital Product School’un bir spin-off’udur."
@@ -54,7 +55,7 @@
         },
         {
           "title": "Öğren",
-          "text": "Ürün, tasarım, mühendislik ve yapay zekâ üzerine atölyeler ve mentorluk."
+          "text": "Ürün, tasarım ve mühendislik üzerine atölyeler ve mentorluk."
         },
         {
           "title": "Geliştir",
@@ -76,8 +77,7 @@
       "items": {
         "product-manager": "Problemi çerçeveler, paydaşları hizalar ve ekibi değere odaklı tutar.",
         "interaction-designer": "Kullanıcılarla konuşur, deneyimi şekillendirir ve içgörüleri prototiplere dönüştürür.",
-        "software-engineer": "İlk günden çalışan yazılım geliştirir ve ürünü gerçeğe dönüştürür.",
-        "ai-engineer": "Veriyi keşfeder ve yapay zekâ yeteneklerini ürüne sorumlu şekilde taşır."
+        "software-engineer": "İlk günden çalışan yazılım geliştirir ve ürünü gerçeğe dönüştürür."
       }
     },
     "equation": {
@@ -89,13 +89,17 @@
       "title": "Gerçek şirketlerden gerçek problemler.",
       "cta": "Tüm projeleri gör"
     },
+    "partners": {
+      "label": "Partnerlerimiz",
+      "title": "Bize problemlerini getiren şirketler."
+    },
     "get": {
       "label": "Neler kazanırsın",
       "title": "Bir kurstan çok daha fazlası.",
       "items": [
         {
           "title": "Atölyeler",
-          "text": "Ürün keşfi, tasarım, mühendislik ve yapay zekâ üzerine uygulamalı oturumlar."
+          "text": "Ürün keşfi, tasarım ve mühendislik üzerine uygulamalı oturumlar."
         },
         {
           "title": "Mentorluk",
@@ -118,6 +122,7 @@
     "cta": {
       "lines": ["Senin ekibin.", "Senin ürünün.", "Senin problemin."],
       "text": "{batch} başvuruları {deadline} tarihine kadar açık.",
+      "textTba": "{batch} ({season}) başvuruları açık. Tarihler yakında açıklanacak.",
       "closed": "Bir sonraki dönemin başvuruları yakında açılacak. Bilgilerini bırak, sana haber verelim.",
       "button": "Hemen başvur"
     }
@@ -138,8 +143,6 @@
     "challenge": "Problem",
     "partner": "Partner",
     "members": "Ekip üyeleri",
-    "filterRole": "Role göre filtrele",
-    "allRoles": "Tüm roller",
     "empty": "Bu dönem için henüz ekip duyurulmadı."
   },
   "about": {
@@ -166,7 +169,7 @@
         },
         {
           "title": "Birlikte",
-          "text": "İyi ürünler; ürün, tasarım, mühendislik ve yapay zekânın aynı ekipte olmasını gerektirir."
+          "text": "İyi ürünler; ürün, tasarım ve mühendisliğin aynı ekipte olmasını gerektirir."
         },
         {
           "title": "Yayınla",
@@ -177,8 +180,7 @@
     "mentors": {
       "label": "Mentorlar",
       "title": "Uygulayıcıların rehberliğinde.",
-      "intro": "Mentorlarımız her gün sektörün içinde çalışıyor. Her alan, dönem boyunca ekiplere koçluk yapan deneyimli kişiler tarafından desteklenir.",
-      "all": "Tüm alanlar"
+      "intro": "Mentorlarımız her gün sektörün içinde çalışıyor ve dönem boyunca ekiplere koçluk yapıyor."
     }
   },
   "partner": {
@@ -253,7 +255,7 @@
   "apply": {
     "label": "Başvur",
     "title": "Gerçek bir ekiple gerçek ürünler geliştir.",
-    "intro": "Product Studio’ya ürün yöneticisi, etkileşim tasarımcısı, yazılım mühendisi veya yapay zekâ mühendisi olarak katıl. Bir partner şirketin gerçek problemi üzerinde çapraz fonksiyonlu bir ekipte tam zamanlı çalış.",
+    "intro": "Product Studio’ya ürün yöneticisi, etkileşim tasarımcısı veya yazılım mühendisi olarak katıl. Bir partner şirketin gerçek problemi üzerinde çapraz fonksiyonlu bir ekipte tam zamanlı çalış.",
     "closedTitle": "Başvurular şu anda kapalı.",
     "closedText": "Yine de bilgilerini gönderebilirsin. Bir sonraki dönem açıldığında seninle iletişime geçeceğiz.",
     "rolesTitle": "Rolünü seç",
@@ -387,6 +389,6 @@
   },
   "Metadata": {
     "title": "Product Studio — Gerçek problemler. Gerçek ekipler. Gerçek ürünler.",
-    "description": "Ürün yöneticileri, tasarımcılar, yazılım ve yapay zekâ mühendislerinden oluşan disiplinlerarası ekiplerin, şirketlerin gerçek problemlerini test edilmiş dijital ürünlere dönüştürdüğü uygulamalı bir program."
+    "description": "Ürün yöneticileri, tasarımcılar ve yazılım mühendislerinden oluşan disiplinlerarası ekiplerin, şirketlerin gerçek problemlerini test edilmiş dijital ürünlere dönüştürdüğü uygulamalı bir program."
   }
 }

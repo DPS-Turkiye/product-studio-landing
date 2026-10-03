@@ -1,11 +1,7 @@
-"use client";
-
 import { loc } from "@/lib/content";
 import { useLocale, useTranslations } from "next-intl";
-import { useState } from "react";
-import { Arrow } from "./icons";
 import { Avatar, SectionLabel } from "./ui";
-import type { Track } from "@/lib/content";
+import type { Mentor } from "@/lib/content";
 
 function LinkedInLink({ href, name }: { href?: string; name: string }) {
   const t = useTranslations("common");
@@ -31,11 +27,9 @@ function LinkedInLink({ href, name }: { href?: string; name: string }) {
   );
 }
 
-export function MentorBrowser({ tracks }: { tracks: Track[] }) {
+export function MentorBrowser({ mentors }: { mentors: Mentor[] }) {
   const t = useTranslations();
   const locale = useLocale();
-  const [track, setTrack] = useState("");
-  const shown = track ? tracks.filter((item) => item.id === track) : tracks;
 
   return (
     <section className="section" id="mentors">
@@ -50,59 +44,27 @@ export function MentorBrowser({ tracks }: { tracks: Track[] }) {
           </div>
         </div>
 
-        {tracks.length > 0 && (
-          <div className="role-filter" role="group">
-            {[{ id: "", name: t("about.mentors.all") }, ...tracks].map(
-              (item) => (
-                <button
-                  key={item.id || "all"}
-                  type="button"
-                  className={`chip ${track === item.id ? "is-active" : ""}`}
-                  aria-pressed={track === item.id}
-                  onClick={() => setTrack(item.id)}
-                >
-                  {typeof item.name === "string"
-                    ? item.name
-                    : loc(item.name, locale)}
-                </button>
-              ),
-            )}
-          </div>
-        )}
-
-        {shown.map((item) => (
-          <div className="track" key={item.id}>
-            <div className="track__head">
-              <h3 className="h3">
-                <Arrow size={22} /> {loc(item.name, locale)}
-              </h3>
-              {item.description && (
-                <p className="muted">{loc(item.description, locale)}</p>
-              )}
-            </div>
-            <div className="mentor-grid">
-              {item.mentors.map((mentor) => (
-                <article className="mentor-card" key={mentor.name}>
-                  <div className="mentor-card__photo">
-                    <Avatar name={mentor.name} photo={mentor.photo} size="xl" />
-                  </div>
-                  <div className="mentor-card__body">
-                    <div>
-                      <h3 className="mentor-card__name">{mentor.name}</h3>
-                      <p className="mentor-card__title">
-                        {loc(mentor.title, locale)}
-                      </p>
-                      {mentor.company && (
-                        <p className="label muted">{mentor.company}</p>
-                      )}
-                    </div>
-                    <LinkedInLink href={mentor.linkedin} name={mentor.name} />
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        ))}
+        <div className="mentor-grid">
+          {mentors.map((mentor) => (
+            <article className="mentor-card" key={mentor.name}>
+              <div className="mentor-card__photo">
+                <Avatar name={mentor.name} photo={mentor.photo} size="xl" />
+              </div>
+              <div className="mentor-card__body">
+                <div>
+                  <h3 className="mentor-card__name">{mentor.name}</h3>
+                  <p className="mentor-card__title">
+                    {loc(mentor.title, locale)}
+                  </p>
+                  {mentor.company && (
+                    <p className="label muted">{mentor.company}</p>
+                  )}
+                </div>
+                <LinkedInLink href={mentor.linkedin} name={mentor.name} />
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

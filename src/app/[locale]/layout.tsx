@@ -12,7 +12,7 @@ import type { Metadata, Viewport } from "next";
 import "../globals.css";
 
 const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   display: "optional",
 });
 

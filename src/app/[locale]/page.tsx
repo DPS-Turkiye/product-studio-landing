@@ -7,9 +7,9 @@ import {
   Star,
 } from "@/components/icons";
 import { Marquee } from "@/components/marquee";
-import { Button, SectionLabel, Tag } from "@/components/ui";
+import { Button, PartnerStrip, SectionLabel, Tag } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
-import { batches, loc, site } from "@/lib/content";
+import { batches, loc, partners, site } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -18,7 +18,6 @@ const ROLE_KEYS = [
   "product-manager",
   "interaction-designer",
   "software-engineer",
-  "ai-engineer",
 ];
 const JOURNEY_ICONS = ["teamup", "learn", "build", "test", "ship"];
 const GET_ICONS = ["workshop", "mentor", "teamup", "build", "demo"];
@@ -177,7 +176,7 @@ export default async function HomePage() {
         <div className="container">
           <SectionLabel index="04">{t("home.roles.label")}</SectionLabel>
           <h2 className="h2 mb-7">{t("home.roles.title")}</h2>
-          <div className="cards-4">
+          <div className="cards-3">
             {ROLE_KEYS.map((key, index) => {
               const Icon = OutlineIcons[key];
               return (
@@ -263,10 +262,11 @@ export default async function HomePage() {
                   >
                     <span className="label muted">{team.partner.name}</span>
                     <h3 className="project-item__title">
-                      {loc(team.challenge, locale)}
+                      {team.challenge ? loc(team.challenge, locale) : team.name}
                     </h3>
                     <span className="project-item__meta">
-                      {team.name} <Arrow size={16} />
+                      {team.challenge ? team.name : batch.name}{" "}
+                      <Arrow size={16} />
                     </span>
                   </Link>
                 ))}
@@ -276,9 +276,19 @@ export default async function HomePage() {
         </section>
       )}
 
+      {partners.length > 0 && (
+        <section className="section" id="partners">
+          <div className="container">
+            <SectionLabel index="06">{t("home.partners.label")}</SectionLabel>
+            <h2 className="h2">{t("home.partners.title")}</h2>
+            <PartnerStrip partners={partners} />
+          </div>
+        </section>
+      )}
+
       <section className="section section-off">
         <div className="container">
-          <SectionLabel index="06">{t("home.get.label")}</SectionLabel>
+          <SectionLabel index="07">{t("home.get.label")}</SectionLabel>
           <h2 className="h2 mb-7">{t("home.get.title")}</h2>
           <ul className="get-list">
             {getItems.map((item, index) => {
