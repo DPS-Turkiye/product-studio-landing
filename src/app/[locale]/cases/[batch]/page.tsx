@@ -41,7 +41,8 @@ export default async function BatchPage({
   const t = await getTranslations();
   const locale = await getLocale();
   const season = loc(batch.season, locale);
-  const title = brandedTitle(season ? `${batch.name} · ${season}` : batch.name);
+  const heading = season ? `${batch.name} · ${season}` : batch.name;
+  const title = brandedTitle(heading);
   const description =
     loc(batch.summary, locale) || t("Metadata.pages.cases.description");
   const href = {
@@ -68,7 +69,7 @@ export default async function BatchPage({
       />
       <PageHero
         label={t("cases.label")}
-        title={t("cases.title")}
+        title={heading}
         intro={t("cases.intro")}
         crumbs={crumbs}
         breadcrumbLabel={t("common.breadcrumb")}

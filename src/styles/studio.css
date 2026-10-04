@@ -1,8 +1,4 @@
-/* =========================================================
-   Product Studio — design tokens (from designer brief)
-   ========================================================= */
 :root {
-  /* COLORS */
   --black: #0b0d14;
   --purple: #5832ff;
   --lime: #a6ff00;
@@ -17,10 +13,6 @@
   --text-secondary: #5d5d68;
   --border-color: #dcdce4;
 
-  /* TYPE */
-  --font: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
-
-  /* SPACING */
   --s1: 4px;
   --s2: 8px;
   --s3: 12px;
@@ -32,19 +24,16 @@
   --s9: 96px;
   --s10: 128px;
 
-  /* LAYOUT */
   --container: 1440px;
   --gutter: 48px;
   --grid-gap: 24px;
   --nav-h: 80px;
   --section-y: clamp(80px, 10vw, 150px);
 
-  /* UI */
   --radius: 0;
   --border: 1.5px solid var(--black);
   --shadow-brand: 6px 6px 0 var(--purple);
 
-  /* MOTION */
   --fast: 160ms;
   --base: 240ms;
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -57,9 +46,6 @@
   }
 }
 
-/* =========================================================
-   Base
-   ========================================================= */
 *,
 *::before,
 *::after {
@@ -130,9 +116,6 @@ p {
   left: 8px;
 }
 
-/* =========================================================
-   Typography
-   ========================================================= */
 .display-xl {
   font-size: clamp(64px, 8vw, 128px);
   line-height: 0.88;
@@ -194,9 +177,6 @@ p {
   max-width: 60ch;
 }
 
-/* =========================================================
-   Layout
-   ========================================================= */
 .container {
   width: min(var(--container), calc(100% - var(--gutter) * 2));
   margin-inline: auto;
@@ -288,9 +268,6 @@ p {
   color: var(--white);
 }
 
-/* =========================================================
-   Buttons (sharp, brutalist)
-   ========================================================= */
 .btn {
   min-height: 52px;
   padding: 0 22px;
@@ -373,9 +350,6 @@ a:hover .arrow {
   color: var(--black);
 }
 
-/* =========================================================
-   Tags, chips
-   ========================================================= */
 .tag {
   display: inline-flex;
   align-items: center;
@@ -403,9 +377,6 @@ a:hover .arrow {
   gap: 8px;
 }
 
-/* =========================================================
-   Nav
-   ========================================================= */
 .nav {
   position: sticky;
   top: 0;
@@ -441,7 +412,7 @@ a:hover .arrow {
 .nav.is-scrolled .nav__logo img {
   height: 34px;
 }
-/* On the home page the hero shows the big logo; the nav logo fades in on scroll. */
+
 .nav__logo {
   transition:
     opacity var(--base),
@@ -585,9 +556,6 @@ a:hover .arrow {
   }
 }
 
-/* =========================================================
-   Hero
-   ========================================================= */
 .hero {
   position: relative;
   overflow: hidden;
@@ -623,8 +591,8 @@ a:hover .arrow {
   letter-spacing: -0.035em;
   text-transform: uppercase;
 }
-.hero__lines .is-lime {
-  color: var(--lime);
+.hero__lines .is-purple {
+  color: var(--purple);
   -webkit-text-stroke: 0;
   text-shadow: none;
 }
@@ -682,9 +650,6 @@ a:hover .arrow {
   }
 }
 
-/* =========================================================
-   Marquee
-   ========================================================= */
 .marquee {
   position: relative;
   background: var(--black);
@@ -731,9 +696,6 @@ a:hover .arrow {
   }
 }
 
-/* =========================================================
-   Home sections
-   ========================================================= */
 .what__body {
   display: flex;
   flex-direction: column;
@@ -788,7 +750,6 @@ a:hover .arrow {
   }
 }
 
-/* Journey */
 .journey {
   list-style: none;
   padding: 0;
@@ -885,7 +846,6 @@ a:hover .arrow {
   }
 }
 
-/* Feature cards */
 .cards-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -978,7 +938,6 @@ a:hover .arrow {
   color: var(--white);
 }
 
-/* Equation */
 .equation {
   overflow: hidden;
 }
@@ -1030,7 +989,6 @@ a:hover .arrow {
   }
 }
 
-/* Projects */
 .project-grid {
   display: grid;
   grid-template-columns: 5fr 7fr;
@@ -1109,7 +1067,6 @@ a:hover .arrow {
   }
 }
 
-/* What you get */
 .get-list {
   list-style: none;
   margin: 0;
@@ -1150,7 +1107,6 @@ a:hover .arrow {
   }
 }
 
-/* CTA */
 .cta {
   background: var(--purple);
   color: var(--white);
@@ -1219,9 +1175,6 @@ a:hover .arrow {
   }
 }
 
-/* =========================================================
-   Page hero (inner pages)
-   ========================================================= */
 .page-hero {
   position: relative;
   overflow: hidden;
@@ -1339,9 +1292,6 @@ a:hover .arrow {
   background: #fff2f2;
 }
 
-/* =========================================================
-   Cases
-   ========================================================= */
 .batch-tabs {
   display: flex;
   gap: 0;
@@ -1660,9 +1610,6 @@ a.partner-mark:hover .partner-mark__name {
   transform: translate(3px, -3px);
 }
 
-/* =========================================================
-   About
-   ========================================================= */
 .about-photo {
   position: relative;
   aspect-ratio: 4 / 3;
@@ -1793,9 +1740,6 @@ a.partner-mark:hover .partner-mark__name {
   line-height: 1.35;
 }
 
-/* =========================================================
-   Partner
-   ========================================================= */
 .partner-strip {
   display: flex;
   flex-wrap: wrap;
@@ -1830,7 +1774,7 @@ a.partner-strip__item:hover {
   width: auto;
   filter: grayscale(100%);
 }
-/* White logo artwork: invert so it reads on light backgrounds. */
+
 .partner-strip__item img.logo-invert,
 .partner-mark__logo.logo-invert {
   filter: grayscale(100%) invert(1);
@@ -1883,9 +1827,6 @@ a.partner-strip__item:hover {
   border-bottom: 2px solid currentColor;
 }
 
-/* =========================================================
-   Apply
-   ========================================================= */
 .check-list {
   list-style: none;
   padding: 0;
@@ -1976,9 +1917,6 @@ a.partner-strip__item:hover {
   color: var(--text-secondary);
 }
 
-/* =========================================================
-   Forms
-   ========================================================= */
 .form {
   display: flex;
   flex-direction: column;
@@ -2178,9 +2116,6 @@ a.partner-strip__item:hover {
   animation: spin 10s linear infinite;
 }
 
-/* =========================================================
-   States
-   ========================================================= */
 .state-msg {
   display: flex;
   align-items: center;
@@ -2213,9 +2148,6 @@ a.partner-strip__item:hover {
   gap: 0.2em;
 }
 
-/* =========================================================
-   Footer
-   ========================================================= */
 .footer {
   background: var(--black);
   color: var(--white);

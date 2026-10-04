@@ -80,7 +80,7 @@ export default async function HomePage() {
                 {lines.map((line, index) => (
                   <span
                     key={line}
-                    className={index === lines.length - 1 ? "is-lime" : ""}
+                    className={index === lines.length - 1 ? "is-purple" : ""}
                   >
                     {line}
                   </span>
