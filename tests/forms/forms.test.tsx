@@ -178,7 +178,7 @@ describe("application form", () => {
   it("keeps the honeypot out of the way", () => {
     renderForm(<ApplicationForm email="hello@productstudio.com.tr" />);
     expect(
-      screen.getByRole("textbox", { name: "Website", hidden: true }),
+      screen.getByRole("textbox", { name: "Referral code", hidden: true }),
     ).toHaveAttribute("tabindex", "-1");
   });
 });

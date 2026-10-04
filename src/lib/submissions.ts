@@ -87,7 +87,7 @@ export const applicationSchema = z.object({
   heard_from: optionalText(120),
   available: must,
   consent: must,
-  website_url: optionalText(300),
+  referral_code: optionalText(300),
   lang: locale,
 });
 
@@ -102,7 +102,7 @@ export const partnerSchema = z.object({
   challenge: optionalText(4000),
   heard_from: optionalText(120),
   consent: must,
-  website_url: optionalText(300),
+  referral_code: optionalText(300),
   lang: locale,
 });
 
@@ -132,8 +132,8 @@ export async function acceptSubmission<T>(
   }
 
   const honeypot =
-    "website_url" in body
-      ? String((body as { website_url?: unknown }).website_url ?? "").trim()
+    "referral_code" in body
+      ? String((body as { referral_code?: unknown }).referral_code ?? "").trim()
       : "";
   if (honeypot) return NextResponse.json({ ok: true }, { status: 201 });
 

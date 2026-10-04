@@ -102,7 +102,7 @@ export default async function HomePage() {
               alt={t("media.heroAlt")}
               width={882}
               height={941}
-              preload
+              loading="eager"
               fetchPriority="high"
               sizes="(max-width: 1000px) 100vw, 720px"
               className="hero__photo"

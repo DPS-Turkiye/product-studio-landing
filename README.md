@@ -105,7 +105,7 @@ The JSON shipped in this repo is sample content. Replace it before treating the 
 
 Both forms validate with one Zod schema on the client and again on the server. Field errors are short codes (`required`, `invalid`, `invalid_email`, `too_short`) that the UI maps to translated copy.
 
-A hidden `website_url` field is a honeypot. A submission that fills it receives a success response and sends no mail.
+A hidden `referral_code` field is a honeypot. A submission that fills it receives a success response and sends no mail.
 
 Accepted submissions are rendered with React Email and delivered through Resend. The sender and recipient list are constants in `src/lib/mail.ts`. `RESEND_API_KEY` is the only mail secret, and it comes from the environment.
 

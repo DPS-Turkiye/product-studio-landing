@@ -58,7 +58,7 @@ describe("application schema", () => {
     expect(parsed.phone).toBe("");
     expect(parsed.city).toBe("");
     expect(parsed.lang).toBe("en");
-    expect(parsed.website_url).toBe("");
+    expect(parsed.referral_code).toBe("");
   });
 
   it("accepts every role and status", () => {
@@ -275,7 +275,7 @@ describe("acceptSubmission", () => {
   it("pretends a honeypot submission succeeded", async () => {
     const send = vi.fn();
     const response = await acceptSubmission(
-      request({ ...application, website_url: " https://spam.test " }),
+      request({ ...application, referral_code: " https://spam.test " }),
       applicationSchema,
       send,
     );
@@ -288,7 +288,7 @@ describe("acceptSubmission", () => {
     const send = vi.fn();
 
     const blank = await acceptSubmission(
-      request({ ...application, website_url: "   " }),
+      request({ ...application, referral_code: "   " }),
       applicationSchema,
       send,
     );
@@ -306,7 +306,7 @@ describe("acceptSubmission", () => {
 
     send.mockClear();
     const empty = await acceptSubmission(
-      request({ ...application, website_url: null }),
+      request({ ...application, referral_code: null }),
       applicationSchema,
       send,
     );

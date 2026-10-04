@@ -16,7 +16,7 @@ const defaults: PartnerInput = {
   challenge: "",
   heard_from: "",
   consent: false,
-  website_url: "",
+  referral_code: "",
 };
 
 export function usePartnerForm() {

@@ -45,7 +45,7 @@ Production responses from `next.config.ts` send:
 
 These headers are applied when `NODE_ENV` is `production`.
 
-Form bodies are parsed as JSON and checked with Zod before any mail is sent. A non-empty honeypot field (`website_url`) is accepted with an empty success response and is not emailed. The Resend API key is read from the environment and is not stored in the repository. `.env` files are gitignored; `.env.example` contains placeholders only.
+Form bodies are parsed as JSON and checked with Zod before any mail is sent. A non-empty honeypot field (`referral_code`) is accepted with an empty success response and is not emailed. The Resend API key is read from the environment and is not stored in the repository. `.env` files are gitignored; `.env.example` contains placeholders only.
 
 The deployed project is also expected to use the Vercel firewall in front of the form routes. That control lives in the Vercel project, not in this source tree.
 

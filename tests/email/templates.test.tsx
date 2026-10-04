@@ -92,7 +92,7 @@ describe("email rows", () => {
         portfolio: "https://ada.example",
         experience: "Shipped a payments prototype.",
         heard_from: "A mentor",
-        website_url: "https://spam.example",
+        referral_code: "https://spam.example",
       }),
     );
 
@@ -202,7 +202,7 @@ describe("email rows", () => {
         challenge: "Riders miss connections.",
         heard_from: "Demo day",
         lang: "tr",
-        website_url: "https://spam.example",
+        referral_code: "https://spam.example",
       }),
     );
 
@@ -277,7 +277,7 @@ describe("email html", () => {
 
   it("hides empty application fields and the honeypot", async () => {
     const html = await applicationHtml(
-      application({ website_url: "https://spam.example" }),
+      application({ referral_code: "https://spam.example" }),
     );
     expect(html).not.toContain("Phone");
     expect(html).not.toContain("Institution");
@@ -286,7 +286,7 @@ describe("email html", () => {
     expect(html).not.toContain("Heard from");
     expect(html).not.toContain("spam.example");
     expect(html).not.toContain("Consent");
-    expect(html).not.toContain("website_url");
+    expect(html).not.toContain("referral_code");
   });
 
   it("escapes markup and keeps line breaks in the motivation", async () => {

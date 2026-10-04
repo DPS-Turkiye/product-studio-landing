@@ -251,7 +251,7 @@ export function Honeypot(props: InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div className="hp" aria-hidden="true">
       <label>
-        Website
+        Referral code
         <input type="text" tabIndex={-1} autoComplete="off" {...props} />
       </label>
     </div>
@@ -439,7 +439,7 @@ export function ApplicationForm({ email }: { email: string }) {
         {...form.register("consent")}
         checked={form.watch("consent")}
       />
-      <Honeypot {...form.register("website_url")} />
+      <Honeypot {...form.register("referral_code")} />
       <SubmitRow pending={isPending} error={isServerError} email={email} />
     </form>
   );
@@ -536,7 +536,7 @@ export function PartnerForm({ email }: { email: string }) {
         {...form.register("consent")}
         checked={form.watch("consent")}
       />
-      <Honeypot {...form.register("website_url")} />
+      <Honeypot {...form.register("referral_code")} />
       <SubmitRow pending={isPending} error={isServerError} email={email} />
     </form>
   );

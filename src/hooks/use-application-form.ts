@@ -21,7 +21,7 @@ const defaults: ApplicationInput = {
   heard_from: "",
   available: false,
   consent: false,
-  website_url: "",
+  referral_code: "",
 };
 
 export function useApplicationForm() {

@@ -92,7 +92,7 @@ describe("submission routes", () => {
     const { postPartner } = await routes();
     const response = await postPartner(
       call("http://localhost/api/partners", {
-        website_url: "https://spam.test",
+        referral_code: "https://spam.test",
       }),
     );
     expect(response.status).toBe(201);

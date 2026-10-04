@@ -103,7 +103,6 @@ export function PageHero({
         alt=""
         width={592}
         height={400}
-        loading="eager"
         aria-hidden
       />
     </section>

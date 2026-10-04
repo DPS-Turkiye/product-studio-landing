@@ -67,7 +67,6 @@ export default async function AboutPage() {
                 src="/images/team-table.jpg"
                 alt={t("media.teamAlt")}
                 fill
-                priority
                 loading="eager"
                 sizes="(max-width: 1000px) 100vw, 42vw"
                 className="project-image"
