@@ -9,6 +9,7 @@ import {
 } from "@/lib/submissions";
 import { NextRequest } from "next/server";
 import { describe, expect, it, vi } from "vitest";
+import { z } from "zod";
 
 const motivation =
   "I want to build a tested product with a real cross-functional team.";
@@ -230,6 +231,24 @@ describe("partner schema", () => {
   });
 });
 
+describe("field errors", () => {
+  it("keeps the first code for a field and skips issues with no path", () => {
+    const error = {
+      issues: [
+        { path: [], message: "required" },
+        { path: ["email"], message: "required" },
+        { path: ["email"], message: "invalid_email" },
+        { path: ["full_name"], message: "too_short" },
+      ],
+    } as unknown as z.ZodError;
+
+    expect(fieldErrors(error)).toEqual([
+      { field: "email", code: "required" },
+      { field: "full_name", code: "too_short" },
+    ]);
+  });
+});
+
 describe("acceptSubmission", () => {
   function request(body: unknown) {
     return new NextRequest("http://localhost/api/applications", {
@@ -262,6 +281,36 @@ describe("acceptSubmission", () => {
     );
     expect(response.status).toBe(201);
     await expect(response.json()).resolves.toEqual({ ok: true });
+    expect(send).not.toHaveBeenCalled();
+  });
+
+  it("does not treat a blank or null honeypot as spam", async () => {
+    const send = vi.fn();
+
+    const blank = await acceptSubmission(
+      request({ ...application, website_url: "   " }),
+      applicationSchema,
+      send,
+    );
+    expect(blank.status).toBe(201);
+    expect(send).toHaveBeenCalledTimes(1);
+
+    send.mockClear();
+    const missing = await acceptSubmission(
+      request(application),
+      applicationSchema,
+      send,
+    );
+    expect(missing.status).toBe(201);
+    expect(send).toHaveBeenCalledTimes(1);
+
+    send.mockClear();
+    const empty = await acceptSubmission(
+      request({ ...application, website_url: null }),
+      applicationSchema,
+      send,
+    );
+    expect(empty.status).toBe(422);
     expect(send).not.toHaveBeenCalled();
   });
 

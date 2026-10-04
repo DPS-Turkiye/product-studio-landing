@@ -4,7 +4,7 @@ Product Studio takes reports about this website seriously. Please send them priv
 
 ## Reporting
 
-Email [hello@productstudio.com.tr](mailto:hello@productstudio.com.tr).
+Email [info@dpsturkiye.com](mailto:info@dpsturkiye.com).
 
 Include:
 

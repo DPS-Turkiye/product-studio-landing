@@ -1,10 +1,10 @@
 "use client";
 
 import { Link, usePathname } from "@/i18n/navigation";
-import { useParams } from "next/navigation";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { Arrow } from "./icons";
+import { LocaleSwitcher } from "./locale-switcher";
 
 const NAV = [
   { to: "/cases", key: "cases" },
@@ -16,15 +16,6 @@ export function SiteHeader() {
   const t = useTranslations("nav");
   const common = useTranslations("common");
   const pathname = usePathname();
-  const params = useParams();
-  const locale = useLocale();
-  const batch = typeof params.batch === "string" ? params.batch : undefined;
-  const localeHref =
-    pathname === "/cases/[batch]"
-      ? batch
-        ? { pathname, params: { batch } }
-        : "/cases"
-      : pathname;
   const [scrolled, setScrolled] = useState(false);
   const [menuPath, setMenuPath] = useState<string | null>(null);
   const open = menuPath === pathname;
@@ -69,20 +60,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="nav__actions">
-          <div className="lang-toggle" role="group" aria-label={t("lang")}>
-            {(["en", "tr"] as const).map((code) => (
-              <Link
-                key={code}
-                href={localeHref}
-                locale={code}
-                className={locale === code ? "is-active" : ""}
-                hrefLang={code}
-                aria-current={locale === code ? "true" : undefined}
-              >
-                {code.toUpperCase()}
-              </Link>
-            ))}
-          </div>
+          <LocaleSwitcher />
           <Link href="/apply" className="btn btn-primary btn-sm nav__apply">
             <span>{t("apply")}</span>
             <Arrow size={14} />

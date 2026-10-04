@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://productstudio.com.tr">productstudio.com.tr</a>
+  <a href="https://www.productstudio.com.tr">www.productstudio.com.tr</a>
 </p>
 
 Product Studio is a hands-on program where interdisciplinary teams of product managers, designers, and software engineers turn company challenges into tested digital products. This repository is the public website: program pages, case studies, and the application and partner forms.

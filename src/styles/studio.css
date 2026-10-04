@@ -473,6 +473,9 @@ a:hover .arrow {
   background: var(--black);
   color: var(--white);
 }
+.nav__apply {
+  min-width: 134px;
+}
 
 .nav__burger {
   display: none;
