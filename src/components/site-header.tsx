@@ -14,6 +14,7 @@ const NAV = [
 
 export function SiteHeader() {
   const t = useTranslations("nav");
+  const common = useTranslations("common");
   const pathname = usePathname();
   const params = useParams();
   const locale = useLocale();
@@ -55,7 +56,7 @@ export function SiteHeader() {
           />
         </Link>
 
-        <nav className="nav__links" aria-label="Main">
+        <nav className="nav__links" aria-label={common("mainNav")}>
           {NAV.map((item) => (
             <Link
               key={item.to}
@@ -101,7 +102,7 @@ export function SiteHeader() {
       </div>
 
       <div id="mobile-menu" className="mobile-menu" hidden={!open}>
-        <nav className="container" aria-label="Mobile">
+        <nav className="container" aria-label={common("mobileNav")}>
           {(
             [
               { to: "/", key: "home" },

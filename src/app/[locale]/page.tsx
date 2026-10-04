@@ -6,11 +6,18 @@ import {
   OutlineIcons,
   Star,
 } from "@/components/icons";
+import { JsonLd } from "@/components/json-ld";
 import { Marquee } from "@/components/marquee";
 import { Button, PartnerStrip, SectionLabel, Tag } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
 import { batches, loc, partners, site } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
+import {
+  pageGraph,
+  pageUrl,
+  programEntity,
+  programId,
+} from "@/lib/structured-data";
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 
@@ -42,24 +49,22 @@ export default async function HomePage() {
   const batch = batches[0];
   const teams = batch?.teams.slice(0, 4) ?? [];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    name: "Product Studio",
-    description: t("Metadata.description"),
-    email: site.contactEmail,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Ankara",
-      addressCountry: "TR",
-    },
-  };
+  const title = t("Metadata.title");
+  const description = t("Metadata.description");
+  const roles = ROLE_KEYS.map((key) => t(`roles.${key}`));
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      <JsonLd
+        data={pageGraph({
+          locale,
+          href: "/",
+          title,
+          description,
+          image: "/images/hero.jpg",
+          mainEntityId: programId(),
+          extra: [programEntity(description, roles, pageUrl(locale, "/apply"))],
+        })}
       />
       <section className="hero">
         <div className="container hero__grid">
@@ -71,17 +76,17 @@ export default async function HomePage() {
                 width={659}
                 height={279}
               />
+              <span className="hero__lines">
+                {lines.map((line, index) => (
+                  <span
+                    key={line}
+                    className={index === lines.length - 1 ? "is-lime" : ""}
+                  >
+                    {line}
+                  </span>
+                ))}
+              </span>
             </h1>
-            <p className="hero__lines">
-              {lines.map((line, index) => (
-                <span
-                  key={line}
-                  className={index === lines.length - 1 ? "is-lime" : ""}
-                >
-                  {line}
-                </span>
-              ))}
-            </p>
             <span className="hero__rule" aria-hidden="true" />
             <p className="body-lg hero__intro">{t("home.hero.intro")}</p>
             <div className="hero__ctas">
@@ -94,7 +99,7 @@ export default async function HomePage() {
           <div className="hero__visual">
             <Image
               src="/images/hero.jpg"
-              alt="Product Studio participants working together"
+              alt={t("media.heroAlt")}
               width={882}
               height={941}
               preload
@@ -238,7 +243,7 @@ export default async function HomePage() {
               <div className="project-feature">
                 <Image
                   src="/images/team-table.jpg"
-                  alt=""
+                  alt={t("media.teamAlt")}
                   fill
                   sizes="(max-width: 900px) 100vw, 42vw"
                   className="project-image"

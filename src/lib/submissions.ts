@@ -1,4 +1,6 @@
+import { NextResponse } from "next/server";
 import { z } from "zod";
+import type { NextRequest } from "next/server";
 
 const URLISH = /^(https?:\/\/)?[\w.-]+\.[a-z]{2,}(\/\S*)?$/i;
 
@@ -120,24 +122,24 @@ export function fieldErrors(error: z.ZodError) {
 }
 
 export async function acceptSubmission<T>(
-  request: Request,
+  request: NextRequest,
   schema: z.ZodType<T>,
   send: (data: T) => Promise<void>,
 ) {
   const body = (await request.json().catch(() => null)) as unknown;
   if (!body || typeof body !== "object") {
-    return Response.json({ error: "invalid" }, { status: 400 });
+    return NextResponse.json({ error: "invalid" }, { status: 400 });
   }
 
   const honeypot =
     "website_url" in body
       ? String((body as { website_url?: unknown }).website_url ?? "").trim()
       : "";
-  if (honeypot) return Response.json({ ok: true }, { status: 201 });
+  if (honeypot) return NextResponse.json({ ok: true }, { status: 201 });
 
   const parsed = schema.safeParse(body);
   if (!parsed.success) {
-    return Response.json(
+    return NextResponse.json(
       { fields: fieldErrors(parsed.error) },
       { status: 422 },
     );
@@ -147,8 +149,8 @@ export async function acceptSubmission<T>(
     await send(parsed.data);
   } catch (error) {
     console.error(error);
-    return Response.json({ error: "send_failed" }, { status: 500 });
+    return NextResponse.json({ error: "send_failed" }, { status: 500 });
   }
 
-  return Response.json({ ok: true }, { status: 201 });
+  return NextResponse.json({ ok: true }, { status: 201 });
 }

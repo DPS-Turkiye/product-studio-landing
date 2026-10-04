@@ -1,6 +1,16 @@
 import { Star } from "@/components/icons";
 import { Button } from "@/components/ui";
 import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("notFound");
+  return {
+    title: { absolute: `${t("title")} — Product Studio` },
+    description: t("text"),
+    robots: { index: false, follow: true },
+  };
+}
 
 export default async function NotFound() {
   const t = await getTranslations("notFound");

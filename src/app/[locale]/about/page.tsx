@@ -1,23 +1,29 @@
 import { ApplyCta } from "@/components/apply-cta";
 import { DotGrid, Star } from "@/components/icons";
+import { JsonLd } from "@/components/json-ld";
 import { MentorBrowser } from "@/components/mentor-browser";
 import { PageHero, SectionLabel } from "@/components/ui";
 import { mentors } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
+import { mentorList, pageGraph, pageUrl } from "@/lib/structured-data";
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
+import type { Crumb } from "@/lib/structured-data";
 
 export async function generateMetadata() {
-  const t = await getTranslations();
-  return pageMetadata(
-    "/about",
-    `${t("nav.about")} — Product Studio`,
-    t("about.intro"),
-  );
+  const t = await getTranslations("Metadata.pages.about");
+  return pageMetadata("/about", t("title"), t("description"));
 }
 
 export default async function AboutPage() {
   const t = await getTranslations();
+  const locale = await getLocale();
+  const title = t("Metadata.pages.about.title");
+  const description = t("Metadata.pages.about.description");
+  const crumbs: Crumb[] = [
+    { href: "/", label: t("nav.home") },
+    { href: "/about", label: t("nav.about") },
+  ];
   const story = t.raw("about.story.body") as string[];
   const values = t.raw("about.values.items") as {
     title: string;
@@ -26,10 +32,30 @@ export default async function AboutPage() {
 
   return (
     <>
+      <JsonLd
+        data={pageGraph({
+          locale,
+          href: "/about",
+          title,
+          description,
+          crumbs,
+          image: "/images/team-table.jpg",
+          extra: [
+            mentorList(
+              locale,
+              mentors,
+              pageUrl(locale, "/about"),
+              t("about.mentors.title"),
+            ),
+          ],
+        })}
+      />
       <PageHero
         label={t("about.label")}
         title={t("about.title")}
         intro={t("about.intro")}
+        crumbs={crumbs}
+        breadcrumbLabel={t("common.breadcrumb")}
       />
 
       <section className="section section-tight">
@@ -39,7 +65,7 @@ export default async function AboutPage() {
             <div className="about-photo">
               <Image
                 src="/images/team-table.jpg"
-                alt=""
+                alt={t("media.teamAlt")}
                 fill
                 priority
                 loading="eager"

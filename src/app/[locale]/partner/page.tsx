@@ -1,21 +1,27 @@
 import { PartnerForm } from "@/components/forms";
 import { Arrow, DotGrid, Star } from "@/components/icons";
+import { JsonLd } from "@/components/json-ld";
 import { Button, PageHero, PartnerStrip, SectionLabel } from "@/components/ui";
 import { partners, site } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
-import { getTranslations } from "next-intl/server";
+import { pageGraph, pageUrl, partnershipService } from "@/lib/structured-data";
+import { getLocale, getTranslations } from "next-intl/server";
+import type { Crumb } from "@/lib/structured-data";
 
 export async function generateMetadata() {
-  const t = await getTranslations();
-  return pageMetadata(
-    "/partner",
-    `${t("nav.partner")} — Product Studio`,
-    t("partner.intro"),
-  );
+  const t = await getTranslations("Metadata.pages.partner");
+  return pageMetadata("/partner", t("title"), t("description"));
 }
 
 export default async function PartnerPage() {
   const t = await getTranslations();
+  const locale = await getLocale();
+  const title = t("Metadata.pages.partner.title");
+  const description = t("Metadata.pages.partner.description");
+  const crumbs: Crumb[] = [
+    { href: "/", label: t("nav.home") },
+    { href: "/partner", label: t("nav.partner") },
+  ];
   const benefits = t.raw("partner.benefits.items") as {
     title: string;
     text: string;
@@ -25,10 +31,24 @@ export default async function PartnerPage() {
 
   return (
     <>
+      <JsonLd
+        data={pageGraph({
+          locale,
+          href: "/partner",
+          title,
+          description,
+          crumbs,
+          extra: [
+            partnershipService(title, description, pageUrl(locale, "/partner")),
+          ],
+        })}
+      />
       <PageHero
         label={t("partner.label")}
         title={t("partner.title")}
         intro={t("partner.intro")}
+        crumbs={crumbs}
+        breadcrumbLabel={t("common.breadcrumb")}
       >
         <div className="page-hero__ctas">
           <Button to={{ pathname: "/partner", hash: "form-top" }}>

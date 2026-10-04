@@ -1,9 +1,11 @@
 import { spaceGrotesk } from "@/app/font";
+import { JsonLd } from "@/components/json-ld";
 import { QueryProvider } from "@/components/query-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { routing } from "@/i18n/routing";
 import { getSiteUrl } from "@/lib/site-url";
+import { siteGraph } from "@/lib/structured-data";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextIntlClientProvider } from "next-intl";
@@ -24,11 +26,22 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(getSiteUrl()),
+    applicationName: "Product Studio",
     title: {
       default: t("title"),
       template: "%s — Product Studio",
     },
     description: t("description"),
+    authors: [{ name: "Product Studio", url: getSiteUrl() }],
+    creator: "Product Studio",
+    publisher: "Product Studio",
+    category: "education",
+    referrer: "origin-when-cross-origin",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
     icons: { icon: "/favicon.svg" },
   };
 }
@@ -38,6 +51,7 @@ export default async function RootLayout({
 }: LayoutProps<"/[locale]">) {
   const locale = await getLocale();
   const t = await getTranslations("common");
+  const meta = await getTranslations("Metadata");
 
   return (
     <html
@@ -46,6 +60,7 @@ export default async function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col">
+        <JsonLd data={siteGraph(meta("description"))} />
         <NextIntlClientProvider>
           <QueryProvider>
             <a className="skip-link" href="#main">

@@ -32,9 +32,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ),
     };
 
+    const images =
+      href === "/"
+        ? [
+            absoluteUrl("/images/hero.jpg"),
+            absoluteUrl("/images/team-table.jpg"),
+          ]
+        : href === "/about"
+          ? [absoluteUrl("/images/team-table.jpg")]
+          : undefined;
+
     return routing.locales.map((locale) => ({
       url: absoluteUrl(getPathname({ locale, href })),
-      lastModified: new Date(),
+      ...(images ? { images } : {}),
       alternates: { languages },
     }));
   });

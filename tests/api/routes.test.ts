@@ -1,3 +1,4 @@
+import { NextRequest } from "next/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 const { sendApplication, sendPartner } = vi.hoisted(() => ({
@@ -21,7 +22,7 @@ const motivation =
   "I want to build a tested product with a real cross-functional team.";
 
 function call(url: string, body: unknown) {
-  return new Request(url, {
+  return new NextRequest(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),

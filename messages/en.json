@@ -26,7 +26,10 @@
     "programDates": "Program dates",
     "format": "Format",
     "supportedBy": "Supported by",
-    "skip": "Skip to content"
+    "skip": "Skip to content",
+    "breadcrumb": "Breadcrumb",
+    "mainNav": "Main",
+    "mobileNav": "Mobile"
   },
   "home": {
     "hero": {
@@ -387,8 +390,30 @@
     "text": "The page could not be loaded. Try again.",
     "retry": "Try again"
   },
+  "media": {
+    "heroAlt": "Product Studio participants working together",
+    "teamAlt": "A Product Studio team collaborating around a table"
+  },
   "Metadata": {
     "title": "Product Studio — Real challenges. Real teams. Real products.",
-    "description": "Product Studio brings together interdisciplinary teams of product managers, designers and software engineers to build tested digital products for real company challenges."
+    "description": "A free 12-week program in Ankara where product, design and engineering teams turn real company challenges into tested digital products.",
+    "pages": {
+      "cases": {
+        "title": "Case studies — Product Studio",
+        "description": "Browse Product Studio batches in Ankara: the teams, partner companies and challenges behind tested digital products."
+      },
+      "about": {
+        "title": "About us — Product Studio",
+        "description": "Product Studio is the Ankara spin-off of Digital Product School. Teams learn product development by building with real companies and users."
+      },
+      "partner": {
+        "title": "Become a partner — Product Studio",
+        "description": "Bring a real digital challenge to a Product Studio team in Ankara. In 12 weeks they deliver a user-tested prototype, and you meet the people who built it."
+      },
+      "apply": {
+        "title": "Apply now — Product Studio",
+        "description": "Apply to join Product Studio in Ankara as a product manager, interaction designer or software engineer. The full-time 12-week program is free."
+      }
+    }
   }
 }

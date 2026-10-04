@@ -264,7 +264,7 @@ describe("email html", () => {
     expect(html).toContain('href="mailto:ada@example.com"');
     expect(html).toContain('href="https://www.linkedin.com/in/ada"');
     expect(html).toContain('href="https://ada.example"');
-    expect(html).toContain('href="https://productstudio.com.tr/"');
+    expect(html).toContain('href="https://productstudio.com.tr"');
     expect(html).toContain("METU");
     expect(html).toContain("Computer engineering");
     expect(html).toContain(motivation);

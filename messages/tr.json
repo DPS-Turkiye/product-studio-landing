@@ -26,7 +26,10 @@
     "programDates": "Program tarihleri",
     "format": "Format",
     "supportedBy": "Destekleyen",
-    "skip": "İçeriğe geç"
+    "skip": "İçeriğe geç",
+    "breadcrumb": "Sayfa yolu",
+    "mainNav": "Ana menü",
+    "mobileNav": "Mobil menü"
   },
   "home": {
     "hero": {
@@ -387,8 +390,30 @@
     "text": "Sayfa yüklenemedi. Yeniden dene.",
     "retry": "Yeniden dene"
   },
+  "media": {
+    "heroAlt": "Product Studio katılımcıları birlikte çalışırken",
+    "teamAlt": "Bir Product Studio ekibi masa başında birlikte çalışırken"
+  },
   "Metadata": {
     "title": "Product Studio — Gerçek problemler. Gerçek ekipler. Gerçek ürünler.",
-    "description": "Ürün yöneticileri, tasarımcılar ve yazılım mühendislerinden oluşan disiplinlerarası ekiplerin, şirketlerin gerçek problemlerini test edilmiş dijital ürünlere dönüştürdüğü uygulamalı bir program."
+    "description": "Ankara’da 12 haftalık ücretsiz program: ürün, tasarım ve mühendislik ekipleri gerçek şirket problemlerini test edilmiş dijital ürünlere dönüştürür.",
+    "pages": {
+      "cases": {
+        "title": "Projeler — Product Studio",
+        "description": "Ankara’daki Product Studio dönemlerini, ekipleri, partner şirketleri ve test edilmiş ürünlere dönüşen problemleri inceleyin."
+      },
+      "about": {
+        "title": "Hakkımızda — Product Studio",
+        "description": "Product Studio, Digital Product School’un Ankara’daki spin-off’udur. Ekipler ürün geliştirmeyi gerçek şirketler ve kullanıcılarla yaparak öğrenir."
+      },
+      "partner": {
+        "title": "Partner ol — Product Studio",
+        "description": "Gerçek bir dijital problemi Ankara’daki Product Studio ekibine getirin. 12 haftada kullanıcıyla test edilmiş bir prototip alın ve ekiple tanışın."
+      },
+      "apply": {
+        "title": "Başvur — Product Studio",
+        "description": "Product Studio’ya Ankara’da ürün yöneticisi, etkileşim tasarımcısı veya yazılım mühendisi olarak başvurun. 12 haftalık tam zamanlı program ücretsizdir."
+      }
+    }
   }
 }

@@ -1,8 +1,10 @@
 import { Link } from "@/i18n/navigation";
 import { img, initials } from "@/lib/content";
 import Image from "next/image";
+import { Breadcrumbs } from "./breadcrumbs";
 import { Arrow, Star } from "./icons";
 import type { TeamPartner } from "@/lib/content";
+import type { Crumb } from "@/lib/structured-data";
 import type { ComponentProps, ReactNode } from "react";
 
 type LinkHref = ComponentProps<typeof Link>["href"];
@@ -71,15 +73,22 @@ export function PageHero({
   title,
   intro,
   children,
+  crumbs,
+  breadcrumbLabel,
 }: {
   label: string;
   title: string;
   intro?: string;
   children?: ReactNode;
+  crumbs?: Crumb[];
+  breadcrumbLabel?: string;
 }) {
   return (
     <section className="page-hero">
       <div className="container page-hero__inner">
+        {crumbs && breadcrumbLabel ? (
+          <Breadcrumbs items={crumbs} label={breadcrumbLabel} />
+        ) : null}
         <SectionLabel>{label}</SectionLabel>
         <h1 className="display-lg page-hero__title">
           {title}

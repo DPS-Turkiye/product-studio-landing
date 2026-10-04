@@ -11,6 +11,7 @@ describe("site url", () => {
     vi.stubEnv("VERCEL_URL", "ignored.vercel.app");
 
     expect(getSiteUrl()).toBe("https://productstudio.com.tr");
+    expect(absoluteUrl("/")).toBe("https://productstudio.com.tr");
     expect(absoluteUrl("/sitemap.xml")).toBe(
       "https://productstudio.com.tr/sitemap.xml",
     );

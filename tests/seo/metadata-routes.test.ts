@@ -11,19 +11,23 @@ describe("metadata routes", () => {
     vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://example.com");
 
     const entries = sitemap();
-    const home = entries.find((entry) => entry.url === "https://example.com/");
+    const home = entries.find((entry) => entry.url === "https://example.com");
 
     expect(home).toEqual({
-      url: "https://example.com/",
-      lastModified: expect.any(Date),
+      url: "https://example.com",
+      images: [
+        "https://example.com/images/hero.jpg",
+        "https://example.com/images/team-table.jpg",
+      ],
       alternates: {
         languages: {
-          en: "https://example.com/",
+          en: "https://example.com",
           tr: "https://example.com/tr",
-          "x-default": "https://example.com/",
+          "x-default": "https://example.com",
         },
       },
     });
+    expect(home?.lastModified).toBeUndefined();
     const about = entries.find(
       (entry) => entry.url === "https://example.com/about-us",
     );
@@ -41,7 +45,7 @@ describe("metadata routes", () => {
     expect(aboutTr?.alternates).toEqual(about?.alternates);
     expect(entries.map((entry) => entry.url)).toEqual(
       expect.arrayContaining([
-        "https://example.com/",
+        "https://example.com",
         "https://example.com/tr",
         "https://example.com/cases",
         "https://example.com/tr/projeler",

@@ -30,7 +30,7 @@ export async function SiteFooter() {
             <p className="footer__tagline">{t("footer.tagline")}</p>
           </div>
 
-          <div className="footer__col">
+          <nav className="footer__col" aria-label={t("footer.pages")}>
             <p className="label">{t("footer.pages")}</p>
             <Link href="/">{t("nav.home")}</Link>
             {NAV.map((item) => (
@@ -39,16 +39,16 @@ export async function SiteFooter() {
               </Link>
             ))}
             <Link href="/apply">{t("nav.apply")}</Link>
-          </div>
+          </nav>
 
-          <div className="footer__col">
+          <address className="footer__col">
             <p className="label">{t("footer.contact")}</p>
             <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
             {site.partnerEmail !== site.contactEmail && (
               <a href={`mailto:${site.partnerEmail}`}>{site.partnerEmail}</a>
             )}
             <span className="muted">{loc(site.location, locale)}</span>
-          </div>
+          </address>
 
           <div className="footer__col">
             <p className="label">{t("footer.follow")}</p>

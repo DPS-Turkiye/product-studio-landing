@@ -177,14 +177,14 @@ export function CasesBrowser({
             <img
               className="batch-overview__photo project-image"
               src={photo}
-              alt=""
+              alt={active.name}
             />
           ) : (
             <div className="batch-overview__photo">
               <Image
                 className="project-image"
                 src={photo}
-                alt=""
+                alt={active.name}
                 fill
                 sizes="(max-width: 800px) 100vw, 1120px"
                 style={{ objectFit: "cover" }}

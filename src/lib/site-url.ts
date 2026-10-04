@@ -13,5 +13,7 @@ export function getSiteUrl() {
 }
 
 export function absoluteUrl(pathname: string) {
-  return new URL(pathname, getSiteUrl()).href;
+  const url = new URL(pathname, getSiteUrl()).href;
+  if (pathname === "/") return url.replace(/\/$/, "");
+  return url;
 }

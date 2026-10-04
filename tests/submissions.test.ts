@@ -7,6 +7,7 @@ import {
   fieldErrors,
   partnerSchema,
 } from "@/lib/submissions";
+import { NextRequest } from "next/server";
 import { describe, expect, it, vi } from "vitest";
 
 const motivation =
@@ -231,7 +232,7 @@ describe("partner schema", () => {
 
 describe("acceptSubmission", () => {
   function request(body: unknown) {
-    return new Request("http://localhost/api/applications", {
+    return new NextRequest("http://localhost/api/applications", {
       method: "POST",
       body: typeof body === "string" ? body : JSON.stringify(body),
       headers: { "Content-Type": "application/json" },

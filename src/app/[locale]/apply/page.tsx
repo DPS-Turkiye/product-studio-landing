@@ -1,19 +1,24 @@
 import { ApplicationForm } from "@/components/forms";
 import { Arrow, OutlineIcons, Star } from "@/components/icons";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero, SectionLabel } from "@/components/ui";
 import { formatDate, formatRange, loc, site } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
+import {
+  faqPage,
+  pageGraph,
+  pageUrl,
+  programEntity,
+  programId,
+} from "@/lib/structured-data";
 import { getLocale, getTranslations } from "next-intl/server";
+import type { Crumb } from "@/lib/structured-data";
 
 const ROLES = ["product-manager", "interaction-designer", "software-engineer"];
 
 export async function generateMetadata() {
-  const t = await getTranslations();
-  return pageMetadata(
-    "/apply",
-    `${t("nav.apply")} — Product Studio`,
-    t("apply.intro"),
-  );
+  const t = await getTranslations("Metadata.pages.apply");
+  return pageMetadata("/apply", t("title"), t("description"));
 }
 
 export default async function ApplyPage() {
@@ -26,13 +31,40 @@ export default async function ApplyPage() {
     text: string;
   }[];
   const faq = t.raw("apply.faq.items") as { q: string; a: string }[];
+  const title = t("Metadata.pages.apply.title");
+  const description = t("Metadata.pages.apply.description");
+  const crumbs: Crumb[] = [
+    { href: "/", label: t("nav.home") },
+    { href: "/apply", label: t("nav.apply") },
+  ];
+  const url = pageUrl(locale, "/apply");
 
   return (
     <>
+      <JsonLd
+        data={pageGraph({
+          locale,
+          href: "/apply",
+          title,
+          description,
+          crumbs,
+          mainEntityId: programId(),
+          extra: [
+            programEntity(
+              description,
+              ROLES.map((role) => t(`roles.${role}`)),
+              url,
+            ),
+            faqPage(faq, `${url}#faq`),
+          ],
+        })}
+      />
       <PageHero
         label={t("apply.label")}
         title={t("apply.title")}
         intro={t("apply.intro")}
+        crumbs={crumbs}
+        breadcrumbLabel={t("common.breadcrumb")}
       >
         <dl className="key-facts">
           <div>
@@ -149,6 +181,7 @@ export default async function ApplyPage() {
         <div className="container grid-12">
           <div className="col-4">
             <SectionLabel index="05">{t("apply.faq.title")}</SectionLabel>
+            <h2 className="h2">{t("apply.faq.title")}</h2>
           </div>
           <div className="col-8 col-start-5 faq">
             {faq.map((item) => (
